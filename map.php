@@ -1,7 +1,7 @@
 <?
     require 'lib/QuickSQL.php';
     require 'lib/ImageClip.php';
-    new QuickSQL('alocoimbra', 'root', '');
+    new QuickSQL('alocoimbra', 'root', 'root');
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
     <script type="text/javascript">
       function addMarker(map, lat, lng, title, text) {
         var info = new google.maps.InfoWindow({
-          content: "<h1>" + title + "</h1><p>" + text + "</p>"
+          content: "<h1>" + title + "</h1>" + text
         });
 
         var marker = new google.maps.Marker({
@@ -77,17 +77,14 @@
 
       function initialize() {
         var map = new google.maps.Map(document.getElementById("map-canvas"), {
-          	center: new google.maps.LatLng(40.195426, -8.410120),
+          	center: new google.maps.LatLng(40.195426, -8.427000),
           	mapTypeId: google.maps.MapTypeId.ROADMAP,
           	zoom: 14
         });
 
-    <? foreach ($locais->Find('*', '') as $local) {?>
-        addMarker(map, local['Latitude'], local['Longitude'], local['Nome']);
-    <? } ?>
-
-        //addMarker(map, 40.208089, -8.424282, "Pólo 1", "Aqui ficam localizados a grande maioria dos departamentos da universidade.");
-        //addMarker(map, 40.186288, -8.415634, "Pólo 2", "Aqui ficam localizados os departamentos de engenharia.");
+        <? foreach ($locais->Find('*', '') as $local) { ?>
+          addMarker(map, <?=$local['Latitude']?>, <?=$local['Longitude']?>, "<?=$local['Nome']?>", "<?=$local['Descricao']?>");
+        <? } ?>
 
         addZone(map, 'A1', '#FF0000', [
           [40.200820, -8.411622],
