@@ -1,3 +1,9 @@
+<?
+    require 'lib/QuickSQL.php';
+    require 'lib/ImageClip.php';
+    new QuickSQL('alocoimbra', 'root', '');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,8 +82,12 @@
           	zoom: 14
         });
 
-        addMarker(map, 40.208089, -8.424282, "Pólo 1", "Aqui ficam localizados a grande maioria dos departamentos da universidade.");
-        addMarker(map, 40.186288, -8.415634, "Pólo 2", "Aqui ficam localizados os departamentos de engenharia.");
+    <? foreach ($locais->Find('*', '') as $local) {?>
+        addMarker(map, local['Latitude'], local['Longitude'], local['Nome']);
+    <? } ?>
+
+        //addMarker(map, 40.208089, -8.424282, "Pólo 1", "Aqui ficam localizados a grande maioria dos departamentos da universidade.");
+        //addMarker(map, 40.186288, -8.415634, "Pólo 2", "Aqui ficam localizados os departamentos de engenharia.");
 
         addZone(map, 'A1', '#FF0000', [
           [40.200820, -8.411622],
