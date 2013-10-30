@@ -86,13 +86,14 @@
           addMarker(map, <?=$local['Latitude']?>, <?=$local['Longitude']?>, "<?=$local['Nome']?>", "<?=$local['Descricao']?>");
         <? } ?>
 
-        addZone(map, 'A1', '#FF0000', [
-          [40.200820, -8.411622],
-          [40.199541, -8.404799],
-          [40.198197, -8.404026],
-          [40.197378, -8.410549],
-          [40.198919, -8.411622]
-        ]);
+        <?
+          foreach ($propriedadesZona->Find('*', '') as $zona) {
+            echo 'addZone(map,"' . $zona['Nome'] . '","#' . $zona['Cor'] . '",[';
+
+            foreach ($zonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
+              echo '[' . $spot['Latitude'] . ',' . $spot['Longitude'] . '],';
+          }
+        ?>]);
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
