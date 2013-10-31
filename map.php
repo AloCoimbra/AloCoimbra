@@ -92,8 +92,10 @@
 
             foreach ($zonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
               echo '[' . $spot['Latitude'] . ',' . $spot['Longitude'] . '],';
+
+            echo ']);';
           }
-        ?>]);
+        ?>
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
