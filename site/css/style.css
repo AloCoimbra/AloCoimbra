@@ -8,7 +8,7 @@ body{ background:#666;}
 
 
 /* ..:: Menu ::..*/
-#corpo #menu{width:996px; overflow:auto ; background-image:url(../images/Menu.png); margin-right:auto; margin-left:auto}
+#corpo #menu{width:996px; background-image:url(../images/Menu.png); margin-right:auto; margin-left:auto}
 #corpo #menu ul{ list-style-type:none; padding:0px 50px}
 #corpo #menu ul li{ float:left; position:relative;}
 #corpo #menu ul li a, .fb-like{ display:block; padding:8px 15px; font:20px Arial, Helvetica, sans-serif, sans-serif; color:#000000; text-decoration:none;}
