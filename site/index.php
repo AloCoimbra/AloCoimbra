@@ -4,33 +4,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>AloCoimbra</title>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
-    
+    	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     </head>
 
     <body>
-    	<div id="fb-root"></div>
+        <div id="fb-root"></div>
 		<script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=684716608206636";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
     
         <div id="corpo">
             <div id = "logo">
-                <a href="#"><img src="images/Topo.png"; alt="AloCoimbra"; title="AloCoimbra"></a>
+                <a href="#"><img src="images/Topo.png"; alt="AloCoimbra";></a>
             </div>
             <div id = "menu">              
                 <ul>
                     <li><a href="#">Lista</a></li>
                     <li><a href="#">Mapa</a></li>
                     <li><a href="#">Contactos</a></li>
-                    
-                    <div align="right">
-                    	<div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
-                    </div>
-                </ul>  	
+                </ul>
+                <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
             </div>
         
             
@@ -45,10 +42,12 @@
                   </pesquisa>
                 </div>
                         
-                <div id="right">a
+                <div id="right">
+                	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 </div>
             </div> 
+            <br><br><br><br><br>
         </div>
-                
+     
     </body>
 </html>
