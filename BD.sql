@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 30-Out-2013 às 17:11
+-- Data de Criação: 06-Nov-2013 às 16:12
 -- Versão do servidor: 5.6.12-log
 -- versão do PHP: 5.4.12
 
@@ -86,9 +86,13 @@ CREATE TABLE IF NOT EXISTS `ordem` (
   `Senhorio` tinyint(1) NOT NULL,
   `Lavagem_roupa` tinyint(1) NOT NULL,
   `Mobilado` tinyint(1) NOT NULL,
-  `Servicos` varchar(128) NOT NULL,
   `Animais` tinyint(1) NOT NULL,
   `Visitas` tinyint(1) NOT NULL,
+  `Agua` tinyint(1) NOT NULL,
+  `Luz` tinyint(1) NOT NULL,
+  `Gas` tinyint(1) NOT NULL,
+  `Internet` tinyint(1) NOT NULL,
+  `Outras_despesas` varchar(64) NOT NULL,
   `Morada` varchar(256) NOT NULL,
   `Zona` varchar(4) NOT NULL,
   `Proprietario` varchar(64) NOT NULL,
@@ -112,9 +116,9 @@ CREATE TABLE IF NOT EXISTS `ordem` (
 -- Extraindo dados da tabela `ordem`
 --
 
-INSERT INTO `ordem` (`ID`, `Visivel`, `Certificacao`, `Senhorio`, `Lavagem_roupa`, `Mobilado`, `Servicos`, `Animais`, `Visitas`, `Morada`, `Zona`, `Proprietario`, `Contacto`, `Email`, `Inscricao_ano`, `Numero_pessoas`, `Min_meses`, `Sexo`, `Cozinha`, `Casa_de_banho`, `Dimensoes`, `Estado_casa`, `Tipo`, `Visita`, `Pagamento`) VALUES
-(0, 1, 1, 0, 0, 0, '', 0, 1, 'Rua do Caralho, 123', 'A1', 'Filho de uma Pega', '947852468', 'porra_para_isto@fuckit.com', 2013, 1, 12, 'masculino', 'bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-07-10', '2013-08-06'),
-(1, 1, 1, 1, 1, 1, '', 1, 1, 'Rua da merda', '69', 'Pila man', '999999999', 'merda@gah.com', 2011, 5, 6, 'feminino', 'razoavel', 'razoavel', 'razoavel', 'razoavel', 'apartamento', '2013-10-01', '2013-10-01');
+INSERT INTO `ordem` (`ID`, `Visivel`, `Certificacao`, `Senhorio`, `Lavagem_roupa`, `Mobilado`, `Animais`, `Visitas`, `Agua`, `Luz`, `Gas`, `Internet`, `Outras_despesas`, `Morada`, `Zona`, `Proprietario`, `Contacto`, `Email`, `Inscricao_ano`, `Numero_pessoas`, `Min_meses`, `Sexo`, `Cozinha`, `Casa_de_banho`, `Dimensoes`, `Estado_casa`, `Tipo`, `Visita`, `Pagamento`) VALUES
+(0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, '', 'Rua do Caralho, 123', 'A1', 'Filho de uma Pega', '947852468', 'porra_para_isto@fuckit.com', 2013, 1, 12, 'masculino', 'bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-07-10', '2013-08-06'),
+(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, '', 'Rua da merda', '69', 'Pila man', '999999999', 'merda@gah.com', 2011, 5, 6, 'feminino', 'razoavel', 'razoavel', 'razoavel', 'razoavel', 'apartamento', '2013-10-01', '2013-10-01');
 
 -- --------------------------------------------------------
 
