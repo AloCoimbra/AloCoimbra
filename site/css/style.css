@@ -100,9 +100,36 @@ body{
 }
 
 #corpo #conteudo #left pesquisa{
-	float:left;
-	width:300;
 	color:#000;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
+	line-height: 200%;
+}
+
+#left pesquisa a{
+	padding:0 0 0 22px;	
+}
+
+.opcao{
+	float: right;
+	margin: 5px 22px 0 0;
+	width: 100px;
+}
+
+#text{
+	float: right;
+	margin: 0 35px 0 0;
+	font-size: 16px;
+}
+
+#rangedval {
+	display: block;
+	margin-bottom: 25px;
+	padding: 10px 25px;
+}
+
+#rangeslider {
+	width: 200px;
+	margin-left: 50px;
+	margin-bottom: 10px;
 }
