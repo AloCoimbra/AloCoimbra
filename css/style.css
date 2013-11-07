@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	background:#666;
+}
+
+#corpo{
+	width:1150px;
+	overflow:auto;
+	background:#999;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#corpo #logo{
+	width:996px;
+	height:264px;
+	padding:10px 0 0 0;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+
+/* ..:: Menu ::..*/
+#corpo #menu { 
+	width:996px;
+	background-image:url(../images/Menu.png);
+	background-repeat:no-repeat;
+	height: 40px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#corpo #menu ul {
+	list-style-type:none;
+	margin-left: 50px;
+}
+
+#corpo #menu ul li {
+	float:left;
+}
+
+#corpo #menu ul li a {
+	display:block;
+	padding: 4px 15px 2px 15px;
+	font:20px Arial, Helvetica, sans-serif, sans-serif;
+	color:#000000;
+	text-decoration:none;
+}
+
+.fb-like {
+	float: right;
+	margin: 5px 22px 0 0;
+}
+
+#corpo #menu ul li a:hover{
+	background:#069;
+	color:#FFFFFF;
+}
+
+
+/* ..:: Conteudo ::.. */
+#corpo #conteudo {
+	width:979px;
+	overflow:auto;
+	margin: 10px 78px;
+}
+
+#corpo #conteudo #left{
+	float:left;
+	width:300px;
+	background:#CCCCCC;
+}
+
+#corpo #conteudo #right{
+	float:right;
+	width:650px;
+	overflow:auto;
+	background:#333;
+}
+
+/* ..:: Parte Esquerda ::..*/
+#corpo #conteudo #left #post{
+	float:left;
+	width:300px;
+	background:#069;
+	text-align: center;
+}
+
+#corpo #conteudo #left #post titulo{
+	color: #FFF;
+	font-size: 20px;
+	font-family: "Arial Black", Gadget, sans-serif;
+	text-align: center;
+}
+
+#corpo #conteudo #left pesquisa{
+	color:#000;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 200%;
+}
+
+#corpo #conteudo #right #post{
+	float:left;
+	width:650px;
+	background:#069;
+	text-align: center;
+}
+
+#corpo #conteudo #right #post titulo{
+	color: #FFF;
+	font-size: 20px;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+#corpo #conteudo #right #lista{
+	width:600px;
+	background:#CCC;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#corpo #conteudo #right #lista info{
+	color:#FFF;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 200%;
+}
+
+#left pesquisa a{
+	padding:0 0 0 22px;	
+}
+
+.opcao{
+	float: right;
+	margin: 5px 22px 0 0;
+	width: 100px;
+}
+
+#text{
+	float: right;
+	margin: 0 35px 0 0;
+	font-size: 16px;
+}
+
+#rangedval {
+	display: block;
+	margin-bottom: 25px;
+	padding: 10px 25px;
+}
+
+#rangeslider {
+	width: 200px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
