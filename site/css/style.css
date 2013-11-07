@@ -6,10 +6,6 @@
 	margin:0;
 }
 
-body{
-	background:#666;
-}
-
 #corpo{
 	width:1150px;
 	overflow:auto;
@@ -119,4 +115,32 @@ body{
 .btn-lg{
 	width: 200px;
 	margin-left: 15px;
+}
+
+/* ..:: Parte Direita ::..*/
+#corpo #conteudo #right #post{
+	float:left;
+	width:650px;
+	background:#069;
+	text-align: center;
+}
+
+#corpo #conteudo #right #post titulo{
+	color: #FFF;
+	font-size: 20px;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+#corpo #conteudo #right #lista{
+	width:600px;
+	background:#CCC;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#corpo #conteudo #right #lista info{
+	color:#FFF;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 200%;
 }

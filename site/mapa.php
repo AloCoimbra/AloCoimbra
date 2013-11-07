@@ -25,10 +25,10 @@
 	    	});
 
 	    </script>
-    </head>
+	</head>
 
-    <body>
-        <div id="fb-root"></div>
+	<body>
+    	<div id="fb-root"></div>
 		<script>
 			(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];
@@ -41,15 +41,15 @@
         
         <script src="js/bootstrap.min.js"></script>
 		<script src="js/bootstrap.slider.js"></script>
-    
-        <div id="corpo">
+	
+    	<div id="corpo">
             <div id = "logo">
                 <img src="images/Topo.png"; alt="AloCoimbra";>
             </div>
             <div id = "menu">              
                 <ul>
-                    <li><a href="#">Lista</a></li>
-                    <li><a href="mapa.php">Mapa</a></li>
+                    <li><a href="index.php">Lista</a></li>
+                    <li><a href="#">Mapa</a></li>
                     <li><a href="#">Contactos</a></li>
                 </ul>
                 <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
@@ -149,17 +149,13 @@
                         
                 <div id="right">
                 	<div id="post">
-                        <titulo>Lista:</titulo>
+                        <titulo>Mapa:</titulo>
                     </div>
                     <br><br><br>
-                    <div id="lista">
-                    	<info><img src="images/Foto.png"; alt="Foto";></info>
-                    </div>
-                 	<br><br><br><br><br>
                 </div>
             </div> 
             <br><br><br><br><br>
         </div>
-     
+    
     </body>
 </html>
