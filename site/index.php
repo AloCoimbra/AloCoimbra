@@ -6,10 +6,25 @@
         <link href="css/style.css" rel="stylesheet" type="text/css" />
     	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         
-        <link rel="stylesheet" type="text/css" media="all" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Acme">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap.slider.css">
+		<script src="js/jquery.js"></script>
+	    <script type="text/javascript">
+
+	    	$(document).ready(function() {
+
+            	$('.slider').slider({
+            		min: 0,
+            		max: 1000,
+            		step: 5,
+            		value: [250,750]
+            	});
+
+            	$('.tooool').tooltip();
+
+	    	});
+
+	    </script>
     </head>
 
     <body>
@@ -23,19 +38,9 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
         </script>
-        <script type="text/javascript">
-			$(function(){
-			  $('#rangeslider').slider({
-				range: true,
-				min: 0,
-				max: 1000,
-				values: [ 50, 200 ],
-				slide: function( event, ui ) {
-				  $('#rangeval').html(ui.values[0]+"€ a "+ui.values[1]+"€");
-				}
-			  });
-			});
-			</script>
+        
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.slider.js"></script>
     
         <div id="corpo">
             <div id = "logo">
@@ -56,8 +61,8 @@
                     <div id="post">
                         <titulo>Pesquisa:</titulo>
                     </div>
-                    <pesquisa>
-                   		<a>Tipo: </a>
+                    <div class="pesquisa">
+                   		Tipo: <br>
                         <select name="cb1" class="opcao" size="1">
                           <option selected value="Quarto">Quarto</option>
                           <option value="Apartamento">Apartamento</option>
@@ -65,30 +70,81 @@
                           <option value="Residência">Residencia</option>
                         </select>
                         <br>
-                        <a>Género: </a>
+                        
+                        Género: <br>
                         <select name="cb1" class="opcao" size="1">
-                          <option selected value="Indiferente">Indiferente</option>
+                          <option selected value="Indiferente"></option>
                           <option value="Masculino">Masculino</option>
                           <option value="Feminino">Feminino</option>
                         </select>
                         <br>
-                        <a>Preço: </a>
-                        <a id="text"><span id="rangeval">50€ a 200€</span></a>
-                        <br>
-                        <!-- .:: código do slider ::. -->
-                        <div id="rangeslider"></div>
-
-                        <a>Localização: </a>
+                        
+                        Localização: <br>
                         <!-- .:: depois meter para ir buscar às areas à BD ::. -->
                         <select name="cb1" class="opcao" size="1">
-                          <option selected value="A1">A1</option>
+                          <option selected value="Indiferente"></option>
+                          <option value="A1">A1</option>
                           <option value="A2">A2</option>
                           <option value="A3">A3</option>
                         </select>
                         <br>
                         
+                        Número mínimo de Meses: <br>
+                        <select name="cb1" class="opcao" size="1">
+                          <option selected value="Indiferente"></option>
+                          <option value="1">1</option>
+                          <option value="3">3</option>
+                          <option value="6">6</option>
+                          <option value="12">12</option>
+						</select>
+                        <br>
                         
-                     </pesquisa>
+                       	Preço: 
+                        <br>
+                        <!-- .:: código do slider ::. -->
+                        <input type="text" class="slider">
+                        
+                        Mobilado:
+                        <input type="checkbox" name="option1" class="opcao1" value="mobilado">
+                        <br>
+                        
+						Lavagem Roupa: 
+                        <input type="checkbox" name="option1" class="opcao1" value="roupa">
+                        <br>
+                        
+                        Despesas: 
+                        <br>
+						<div id="despesa">
+                        	Água
+                            <input type="checkbox" name="option1" class="opcao1" value="agua">
+                            <br>
+                            Luz
+                            <input type="checkbox" name="option1" class="opcao1" value="luz">
+                            <br>
+                            Gás
+                            <input type="checkbox" name="option1" class="opcao1" value="gas">
+                            <br>
+                            Internet
+                            <input type="checkbox" name="option1" class="opcao1" value="internet">
+                            <br> 
+                        </div>
+                        
+                        Senhorio Residente: 
+                        <input type="checkbox" name="option1" class="opcao1" value="senhorio">
+                        <br>
+                        
+                        Visitas:
+                        <input type="checkbox" name="option1" class="opcao1" value="visitas">
+                        <br>
+                        
+                        Animais:
+                        <input type="checkbox" name="option1" class="opcao1" value="animais">
+                        <br><br>
+                        
+                        <p><a class="btn btn-primary btn-lg" role="button">Pesquisar</a></p>
+                        
+                        <br>
+                     </div>
                 </div>
                         
                 <div id="right">

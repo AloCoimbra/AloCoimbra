@@ -32,7 +32,7 @@ body{
 	width:996px;
 	background-image:url(../images/Menu.png);
 	background-repeat:no-repeat;
-	height: 36px;
+	height: 40px;
 	margin-right:auto;
 	margin-left:auto;
 }
@@ -99,37 +99,24 @@ body{
 	font-family: "Arial Black", Gadget, sans-serif;
 }
 
-#corpo #conteudo #left pesquisa{
+.pesquisa{
+	margin-left: 22px;
+	margin-right: 22px;
 	color:#000;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
-	line-height: 200%;
+	line-height: 200%;	
 }
 
-#left pesquisa a{
-	padding:0 0 0 22px;	
-}
-
-.opcao{
+.opcao1, .slider, .opcao{
 	float: right;
-	margin: 5px 22px 0 0;
-	width: 100px;
 }
 
-#text{
-	float: right;
-	margin: 0 35px 0 0;
-	font-size: 16px;
+#despesa{
+	margin-left: 40px;
 }
 
-#rangedval {
-	display: block;
-	margin-bottom: 25px;
-	padding: 10px 25px;
-}
-
-#rangeslider {
+.btn-lg{
 	width: 200px;
-	margin-left: 50px;
-	margin-bottom: 10px;
+	margin-left: 15px;
 }
