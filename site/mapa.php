@@ -5,12 +5,9 @@
     new QuickSQL('alocoimbra', 'root', 'root');
 ?>
 
-<div id="right">
-	<div id="post">
-        <titulo>Mapa:</titulo>
-    </div>
-    
-    <div id="map-canvas"/>
+<div class="right">
+	<div class="head">Mapa:</div>
+  <div id="map"/>
 </div>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjYqJn2S9pwcPGkOLPBxFHPV_ySLWZv8&sensor=false"></script>
@@ -63,7 +60,7 @@
   }
 
   function initialize() {
-    var map = new google.maps.Map(document.getElementById("map-canvas"), {
+    var map = new google.maps.Map(document.getElementById("map"), {
         center: new google.maps.LatLng(40.195426, -8.427000),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         zoom: 14

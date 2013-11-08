@@ -1,12 +1,11 @@
 <? include "pesquisa.html"; ?>
         
-<div id="right">
-	<div id="post">
-        <titulo>Lista:</titulo>
+<div class="right">
+	<div class="head">Lista:</div>
+
+    <div class="lista">
+    	<div>
+    		<img src="images/Foto.png" alt="Foto">
+    	</div>
     </div>
-    <br><br><br>
-    <div id="lista">
-    	<info><img src="images/Foto.png" alt="Foto"></info>
-    </div>
- 	<br><br><br><br><br>
 </div>

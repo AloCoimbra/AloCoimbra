@@ -20,26 +20,19 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
         </script>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/bootstrap.slider.js"></script>
     
         <div id="corpo">
-            <div id = "logo">
-                <img src="images/Topo.png"; alt="AloCoimbra";>
-            </div>
-            <div id = "menu">              
+            <div id="logo"></div>
+            <div id="menu">              
                 <ul>
                     <li><a href="/">Lista</a></li>
-                    <li><a href="/mapa/">Mapa</a></li>
-                    <li><a href="/contactos/">Contactos</a></li>
+                    <li><a href="/mapa">Mapa</a></li>
+                    <li><a href="/contactos">Contactos</a></li>
                 </ul>
                 <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
             </div>
         
-            <div id = "conteudo">
+            <div id="conteudo">
                 <?
                     if ($_GET['page'] == 'main' or @(include $_GET['page'] . ".php") != 1)
                         include '404.html';
