@@ -1,0 +1,101 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.slider').slider({
+        	min: 0,
+        	max: 1000,
+        	step: 5,
+        	value: [250,750]
+        });
+        $('.tooool').tooltip();
+    });
+</script>
+
+<div id="left">
+    <div id="post">
+        <titulo>Pesquisa:</titulo>
+    </div>
+    <div class="pesquisa">
+   		Tipo: <br>
+        <select name="cb1" class="opcao" size="1">
+          <option selected value="Quarto">Quarto</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="República">Republica</option>
+          <option value="Residência">Residencia</option>
+        </select>
+        <br>
+        
+        Género: <br>
+        <select name="cb1" class="opcao" size="1">
+          <option selected value="Indiferente"></option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+        <br>
+        
+        Localização: <br>
+        <!-- .:: depois meter para ir buscar às areas à BD ::. -->
+        <select name="cb1" class="opcao" size="1">
+          <option selected value="Indiferente"></option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="A3">A3</option>
+        </select>
+        <br>
+        
+        Número mínimo de Meses: <br>
+        <select name="cb1" class="opcao" size="1">
+          <option selected value="Indiferente"></option>
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="6">6</option>
+          <option value="12">12</option>
+		</select>
+        <br>
+        
+       	Preço: 
+        <br>
+        <!-- .:: código do slider ::. -->
+        <input type="text" class="slider">
+        
+        Mobilado:
+        <input type="checkbox" name="option1" class="opcao1" value="mobilado">
+        <br>
+        
+		Lavagem Roupa: 
+        <input type="checkbox" name="option1" class="opcao1" value="roupa">
+        <br>
+        
+        Despesas: 
+        <br>
+		<div id="despesa">
+        	Água
+            <input type="checkbox" name="option1" class="opcao1" value="agua">
+            <br>
+            Luz
+            <input type="checkbox" name="option1" class="opcao1" value="luz">
+            <br>
+            Gás
+            <input type="checkbox" name="option1" class="opcao1" value="gas">
+            <br>
+            Internet
+            <input type="checkbox" name="option1" class="opcao1" value="internet">
+            <br> 
+        </div>
+        
+        Senhorio Residente: 
+        <input type="checkbox" name="option1" class="opcao1" value="senhorio">
+        <br>
+        
+        Visitas:
+        <input type="checkbox" name="option1" class="opcao1" value="visitas">
+        <br>
+        
+        Animais:
+        <input type="checkbox" name="option1" class="opcao1" value="animais">
+        <br><br>
+        
+        <p><a class="btn btn-primary btn-lg" role="button">Pesquisar</a></p>
+        
+        <br>
+     </div>
+</div>

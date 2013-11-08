@@ -1,161 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>AloCoimbra</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-    	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap.slider.css">
-		<script src="js/jquery.js"></script>
-	    <script type="text/javascript">
+<?
+    include "pesquisa.html";
+    require 'lib/QuickSQL.php';
+    require 'lib/ImageClip.php';
+    new QuickSQL('alocoimbra', 'root', 'root');
+?>
 
-	    	$(document).ready(function() {
-
-            	$('.slider').slider({
-            		min: 0,
-            		max: 1000,
-            		step: 5,
-            		value: [250,750]
-            	});
-
-            	$('.tooool').tooltip();
-
-	    	});
-
-	    </script>
-	</head>
-
-	<body>
-    	<div id="fb-root"></div>
-		<script>
-			(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=684716608206636";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-        </script>
-        
-        <script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap.slider.js"></script>
-	
-    	<div id="corpo">
-            <div id = "logo">
-                <img src="images/Topo.png"; alt="AloCoimbra";>
-            </div>
-            <div id = "menu">              
-                <ul>
-                    <li><a href="index.php">Lista</a></li>
-                    <li><a href="#">Mapa</a></li>
-                    <li><a href="#">Contactos</a></li>
-                </ul>
-                <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
-            </div>
-        
-            
-            <div id = "conteudo"> 
-                <div id="left">
-                    <div id="post">
-                        <titulo>Pesquisa:</titulo>
-                    </div>
-                    <div class="pesquisa">
-                   		Tipo: <br>
-                        <select name="cb1" class="opcao" size="1">
-                          <option selected value="Quarto">Quarto</option>
-                          <option value="Apartamento">Apartamento</option>
-                          <option value="República">Republica</option>
-                          <option value="Residência">Residencia</option>
-                        </select>
-                        <br>
-                        
-                        Género: <br>
-                        <select name="cb1" class="opcao" size="1">
-                          <option selected value="Indiferente"></option>
-                          <option value="Masculino">Masculino</option>
-                          <option value="Feminino">Feminino</option>
-                        </select>
-                        <br>
-                        
-                        Localização: <br>
-                        <!-- .:: depois meter para ir buscar às areas à BD ::. -->
-                        <select name="cb1" class="opcao" size="1">
-                          <option selected value="Indiferente"></option>
-                          <option value="A1">A1</option>
-                          <option value="A2">A2</option>
-                          <option value="A3">A3</option>
-                        </select>
-                        <br>
-                        
-                        Número mínimo de Meses: <br>
-                        <select name="cb1" class="opcao" size="1">
-                          <option selected value="Indiferente"></option>
-                          <option value="1">1</option>
-                          <option value="3">3</option>
-                          <option value="6">6</option>
-                          <option value="12">12</option>
-						</select>
-                        <br>
-                        
-                       	Preço: 
-                        <br>
-                        <!-- .:: código do slider ::. -->
-                        <input type="text" class="slider">
-                        
-                        Mobilado:
-                        <input type="checkbox" name="option1" class="opcao1" value="mobilado">
-                        <br>
-                        
-						Lavagem Roupa: 
-                        <input type="checkbox" name="option1" class="opcao1" value="roupa">
-                        <br>
-                        
-                        Despesas: 
-                        <br>
-						<div id="despesa">
-                        	Água
-                            <input type="checkbox" name="option1" class="opcao1" value="agua">
-                            <br>
-                            Luz
-                            <input type="checkbox" name="option1" class="opcao1" value="luz">
-                            <br>
-                            Gás
-                            <input type="checkbox" name="option1" class="opcao1" value="gas">
-                            <br>
-                            Internet
-                            <input type="checkbox" name="option1" class="opcao1" value="internet">
-                            <br> 
-                        </div>
-                        
-                        Senhorio Residente: 
-                        <input type="checkbox" name="option1" class="opcao1" value="senhorio">
-                        <br>
-                        
-                        Visitas:
-                        <input type="checkbox" name="option1" class="opcao1" value="visitas">
-                        <br>
-                        
-                        Animais:
-                        <input type="checkbox" name="option1" class="opcao1" value="animais">
-                        <br><br>
-                        
-                        <p><a class="btn btn-primary btn-lg" role="button">Pesquisar</a></p>
-                        
-                        <br>
-                     </div>
-                </div>
-                        
-                <div id="right">
-                	<div id="post">
-                        <titulo>Mapa:</titulo>
-                    </div>
-                    <br><br><br>
-                </div>
-            </div> 
-            <br><br><br><br><br>
-        </div>
+<div id="right">
+	<div id="post">
+        <titulo>Mapa:</titulo>
+    </div>
     
-    </body>
-</html>
+    <div id="map-canvas"/>
+</div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjYqJn2S9pwcPGkOLPBxFHPV_ySLWZv8&sensor=false"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/src/maplabel-compiled.js"></script>
+<script type="text/javascript">
+  function addMarker(map, lat, lng, title, text) {
+    var info = new google.maps.InfoWindow({
+      content: "<h1>" + title + "</h1>" + text
+    });
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      animation: google.maps.Animation.DROP,
+      map: map,
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      info.open(map, marker);
+    });
+  }
+
+  function addZone(map, name, color, coords) {
+     var points = [];
+     var avLat = 0, avLng = 0;
+
+     for (var i=0; i < coords.length; i++) {
+      points[i] = new google.maps.LatLng(coords[i][0], coords[i][1]);
+      avLat = avLat + coords[i][0];
+      avLng = avLng + coords[i][1];
+     }
+
+     new google.maps.Polygon({
+        strokeColor: color,
+        fillColor: color,
+        strokeOpacity: 0.4,
+        strokeWeight: 2,
+        fillOpacity: 0.2,
+        paths: points,
+        map: map
+      });
+
+      new MapLabel({
+        text: name,
+        position: new google.maps.LatLng(avLat / coords.length, avLng / coords.length),
+        map: map,
+        fontSize: 10,
+        fontColor: color,
+        align: 'center'
+      });
+  }
+
+  function initialize() {
+    var map = new google.maps.Map(document.getElementById("map-canvas"), {
+        center: new google.maps.LatLng(40.195426, -8.427000),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 14
+    });
+
+    <? foreach ($locais->Find('*', '') as $local) { ?>
+      addMarker(map, <?=$local['Latitude']?>, <?=$local['Longitude']?>, "<?=$local['Nome']?>", "<?=$local['Descricao']?>");
+    <? } ?>
+
+    <?
+      foreach ($propriedadesZona->Find('*', '') as $zona) {
+        echo 'addZone(map,"' . $zona['Nome'] . '","#' . $zona['Cor'] . '",[';
+
+        foreach ($zonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
+          echo '[' . $spot['Latitude'] . ',' . $spot['Longitude'] . '],';
+
+        echo ']);';
+      }
+    ?>
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

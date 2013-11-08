@@ -14,7 +14,7 @@
 	margin-left:auto;
 }
 
-#corpo #logo{
+#logo{
 	width:996px;
 	height:264px;
 	padding:10px 0 0 0;
@@ -24,7 +24,7 @@
 
 
 /* ..:: Menu ::..*/
-#corpo #menu { 
+#menu { 
 	width:996px;
 	background-image:url(../images/Menu.png);
 	background-repeat:no-repeat;
@@ -33,16 +33,16 @@
 	margin-left:auto;
 }
 
-#corpo #menu ul {
+#menu ul {
 	list-style-type:none;
 	margin-left: 50px;
 }
 
-#corpo #menu ul li {
+#menu ul li {
 	float:left;
 }
 
-#corpo #menu ul li a {
+#menu ul li a {
 	display:block;
 	padding: 4px 15px 2px 15px;
 	font:20px Arial, Helvetica, sans-serif, sans-serif;
@@ -55,26 +55,26 @@
 	margin: 5px 22px 0 0;
 }
 
-#corpo #menu ul li a:hover{
+#menu ul li a:hover{
 	background:#069;
 	color:#FFFFFF;
 }
 
 
 /* ..:: Conteudo ::.. */
-#corpo #conteudo {
+#conteudo {
 	width:979px;
 	overflow:auto;
 	margin: 10px 78px;
 }
 
-#corpo #conteudo #left{
+#left{
 	float:left;
 	width:300px;
 	background:#CCCCCC;
 }
 
-#corpo #conteudo #right{
+#right{
 	float:right;
 	width:650px;
 	overflow:auto;
@@ -82,13 +82,13 @@
 }
 
 /* ..:: Parte Esquerda ::..*/
-#corpo #conteudo #left #post{
+#conteudo #left #post{
 	float:left;
 	width:300px;
 	background:#069;
 }
 
-#corpo #conteudo #left #post titulo{
+#conteudo #left #post titulo{
 	padding:0px 100px;
 	color: #FFF;
 	font-size: 20px;
@@ -118,29 +118,46 @@
 }
 
 /* ..:: Parte Direita ::..*/
-#corpo #conteudo #right #post{
+#conteudo #right #post{
 	float:left;
 	width:650px;
 	background:#069;
 	text-align: center;
 }
 
-#corpo #conteudo #right #post titulo{
+#conteudo #right #post titulo{
 	color: #FFF;
 	font-size: 20px;
 	font-family: "Arial Black", Gadget, sans-serif;
 }
 
-#corpo #conteudo #right #lista{
+#conteudo #right #lista{
 	width:600px;
 	background:#CCC;
 	margin-right:auto;
 	margin-left:auto;
 }
 
-#corpo #conteudo #right #lista info{
+#conteudo #right #lista info{
 	color:#FFF;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 200%;
+}
+
+#map-canvas {
+	width: 650px;
+	height: 650px;
+}
+
+.label {
+	color: red;
+	background-color: white;
+	font-family: "Lucida Grande", "Arial", sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	width: 65px;     
+	border: 2px solid black;
+	white-space: nowrap;
 }

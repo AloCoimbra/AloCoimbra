@@ -1,0 +1,5 @@
+RewriteEngine on
+ErrorDocument 404 main.php?page=404
+
+RewriteRule ^$ main.php?page=lista [L]
+RewriteRule ^mapa?/?$ main.php?page=mapa [L]
