@@ -3,17 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2013 at 05:25 PM
+-- Generation Time: Nov 11, 2013 at 06:07 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `alocoimbra`
@@ -22,11 +16,11 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aluguer`
+-- Table structure for table `aluguers`
 --
 
-DROP TABLE IF EXISTS `aluguer`;
-CREATE TABLE IF NOT EXISTS `aluguer` (
+DROP TABLE IF EXISTS `aluguers`;
+CREATE TABLE IF NOT EXISTS `aluguers` (
   `Alojamento` varchar(32) NOT NULL,
   `Qualidade` set('excelente','muito bom','bom','razoavel') NOT NULL,
   `Preco_mes` int(11) NOT NULL,
@@ -37,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `aluguer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `aluguer`
+-- Dumping data for table `aluguers`
 --
 
 
@@ -86,11 +80,11 @@ INSERT INTO `locais` VALUES('Pólo 3', '<p>Perto dos Hospitais da Universidade d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ordem`
+-- Table structure for table `ordens`
 --
 
-DROP TABLE IF EXISTS `ordem`;
-CREATE TABLE IF NOT EXISTS `ordem` (
+DROP TABLE IF EXISTS `ordens`;
+CREATE TABLE IF NOT EXISTS `ordens` (
   `ID` int(11) NOT NULL,
   `Visivel` tinyint(1) NOT NULL,
   `Certificacao` tinyint(1) NOT NULL,
@@ -124,11 +118,11 @@ CREATE TABLE IF NOT EXISTS `ordem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ordem`
+-- Dumping data for table `ordens`
 --
 
-INSERT INTO `ordem` VALUES(0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, '', 'Rua do Caralho, 123', 'A1', 'Filho de uma Pega', '947852468', 'porra_para_isto@fuckit.com', 2013, 1, 12, 'masculino', 'bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-07-10', '2013-08-06');
-INSERT INTO `ordem` VALUES(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, '', 'Rua da merda', '69', 'Pila man', '999999999', 'merda@gah.com', 2011, 5, 6, 'feminino', 'razoavel', 'razoavel', 'razoavel', 'razoavel', 'apartamento', '2013-10-01', '2013-10-01');
+INSERT INTO `ordens` VALUES(0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, '', 'Rua do Caralho, 123', 'A1', 'Filho de uma Pega', '947852468', 'porra_para_isto@fuckit.com', 2013, 1, 12, 'masculino', 'bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-07-10', '2013-08-06');
+INSERT INTO `ordens` VALUES(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, '', 'Rua da merda', '69', 'Pila man', '999999999', 'merda@gah.com', 2011, 5, 6, 'feminino', 'razoavel', 'razoavel', 'razoavel', 'razoavel', 'apartamento', '2013-10-01', '2013-10-01');
 
 -- --------------------------------------------------------
 

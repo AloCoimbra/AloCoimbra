@@ -1,7 +1,6 @@
 <?
     include "pesquisa.html";
     require 'lib/QuickSQL.php';
-    require 'lib/ImageClip.php';
     new QuickSQL('alocoimbra', 'root', 'root');
 ?>
 
