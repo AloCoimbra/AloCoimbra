@@ -5,8 +5,8 @@
         <title>AloCoimbra</title>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
     	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap.slider.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.slider.css">
     </head>
 
     <body>
