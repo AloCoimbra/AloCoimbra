@@ -68,9 +68,8 @@
 
     <? foreach ($locais->Find('*', '') as $local) { ?>
       addMarker(map, <?=$local['Latitude']?>, <?=$local['Longitude']?>, "<?=$local['Nome']?>", "<?=$local['Descricao']?>");
-    <? } ?>
-
-    <?
+    <? }
+      
       foreach ($propriedadesZona->Find('*', '') as $zona) {
         echo 'addZone(map,"' . $zona['Nome'] . '","#' . $zona['Cor'] . '",[';
 
