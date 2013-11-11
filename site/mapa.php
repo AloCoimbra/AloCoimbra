@@ -14,7 +14,8 @@
 <script type="text/javascript">
   function addMarker(map, lat, lng, title, text) {
     var info = new google.maps.InfoWindow({
-      content: "<h1>" + title + "</h1>" + text
+      content: "<div style='font-size: 12px;'><h1 style='font-size: 17px;'>" + title + "</h1>" + text + "</div>",
+      maxWidth: 250
     });
 
     var marker = new google.maps.Marker({
