@@ -3,11 +3,17 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2013 at 11:04 PM
+-- Generation Time: Nov 11, 2013 at 05:25 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `alocoimbra`
@@ -127,22 +133,28 @@ INSERT INTO `ordem` VALUES(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, '', 'Rua da merda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `propriedadesZona`
+-- Table structure for table `pontoszonas`
 --
 
-DROP TABLE IF EXISTS `propriedadesZona`;
-CREATE TABLE IF NOT EXISTS `propriedadesZona` (
+DROP TABLE IF EXISTS `pontoszonas`;
+CREATE TABLE IF NOT EXISTS `pontoszonas` (
   `Nome` varchar(4) NOT NULL,
-  `Cor` varchar(8) NOT NULL,
-  PRIMARY KEY (`Nome`)
+  `Latitude` double NOT NULL,
+  `Longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `propriedadesZona`
+-- Dumping data for table `pontoszonas`
 --
 
-INSERT INTO `propriedadesZona` VALUES('D3', '00FF00');
-INSERT INTO `propriedadesZona` VALUES('D4', '00FF00');
+INSERT INTO `pontoszonas` VALUES('D4', 40.20734, -8.42943);
+INSERT INTO `pontoszonas` VALUES('D4', 40.20734, -8.42075);
+INSERT INTO `pontoszonas` VALUES('D4', 40.21116, -8.42075);
+INSERT INTO `pontoszonas` VALUES('D4', 40.21116, -8.42943);
+INSERT INTO `pontoszonas` VALUES('D3', 40.21116, -8.42943);
+INSERT INTO `pontoszonas` VALUES('D3', 40.21116, -8.42075);
+INSERT INTO `pontoszonas` VALUES('D3', 40.21498, -8.42075);
+INSERT INTO `pontoszonas` VALUES('D3', 40.21498, -8.42943);
 
 -- --------------------------------------------------------
 
@@ -153,19 +165,13 @@ INSERT INTO `propriedadesZona` VALUES('D4', '00FF00');
 DROP TABLE IF EXISTS `zonas`;
 CREATE TABLE IF NOT EXISTS `zonas` (
   `Nome` varchar(4) NOT NULL,
-  `Latitude` double NOT NULL,
-  `Longitude` double NOT NULL
+  `Cor` varchar(8) NOT NULL,
+  PRIMARY KEY (`Nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `zonas`
 --
 
-INSERT INTO `zonas` VALUES('D4', 40.20734, -8.42943);
-INSERT INTO `zonas` VALUES('D4', 40.20734, -8.42075);
-INSERT INTO `zonas` VALUES('D4', 40.21116, -8.42075);
-INSERT INTO `zonas` VALUES('D4', 40.21116, -8.42943);
-INSERT INTO `zonas` VALUES('D3', 40.21116, -8.42943);
-INSERT INTO `zonas` VALUES('D3', 40.21116, -8.42075);
-INSERT INTO `zonas` VALUES('D3', 40.21498, -8.42075);
-INSERT INTO `zonas` VALUES('D3', 40.21498, -8.42943);
+INSERT INTO `zonas` VALUES('D3', '00FF00');
+INSERT INTO `zonas` VALUES('D4', '00FF00');

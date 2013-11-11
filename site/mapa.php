@@ -70,10 +70,10 @@
       addMarker(map, <?=$local['Latitude']?>, <?=$local['Longitude']?>, "<?=$local['Nome']?>", "<?=$local['Descricao']?>");
     <? }
       
-      foreach ($propriedadesZona->Find('*', '') as $zona) {
+      foreach ($zonas->Find('*', '') as $zona) {
         echo 'addZone(map,"' . $zona['Nome'] . '","#' . $zona['Cor'] . '",[';
 
-        foreach ($zonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
+        foreach ($pontoszonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
           echo '[' . $spot['Latitude'] . ',' . $spot['Longitude'] . '],';
 
         echo ']);';
