@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 15-Nov-2013 às 16:45
+-- Data de Criação: 15-Nov-2013 às 17:00
 -- Versão do servidor: 5.6.12-log
 -- versão do PHP: 5.4.12
 
@@ -33,8 +33,6 @@ CREATE TABLE IF NOT EXISTS `aluguers` (
   `Alojamento` varchar(32) NOT NULL,
   `Qualidade` set('excelente','muito bom','bom','razoavel') NOT NULL,
   `Preco_mes` int(11) NOT NULL,
-  `Preco_semana` int(11) NOT NULL,
-  `Preco_dia` int(11) NOT NULL,
   `Ordem` int(11) NOT NULL,
   KEY `Ordem` (`Ordem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -43,10 +41,10 @@ CREATE TABLE IF NOT EXISTS `aluguers` (
 -- Extraindo dados da tabela `aluguers`
 --
 
-INSERT INTO `aluguers` (`ID`, `Alojamento`, `Qualidade`, `Preco_mes`, `Preco_semana`, `Preco_dia`, `Ordem`) VALUES
-(0, 'Individual', 'muito bom', 140, 0, 0, 1),
-(0, 'Duplo', 'muito bom', 100, 0, 0, 2),
-(0, 'Individual', 'bom', 155, 0, 0, 3);
+INSERT INTO `aluguers` (`ID`, `Alojamento`, `Qualidade`, `Preco_mes`, `Ordem`) VALUES
+(1, 'Individual', 'muito bom', 140, 1),
+(2, 'Duplo', 'muito bom', 100, 2),
+(3, 'Individual', 'bom', 155, 3);
 
 -- --------------------------------------------------------
 
