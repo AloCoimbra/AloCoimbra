@@ -1,25 +1,33 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9.2
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Nov 11, 2013 at 06:07 PM
--- Server version: 5.5.9
--- PHP Version: 5.3.6
+-- Máquina: localhost
+-- Data de Criação: 15-Nov-2013 às 00:08
+-- Versão do servidor: 5.6.12-log
+-- versão do PHP: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `alocoimbra`
+-- Base de Dados: `alocoimbra`
 --
+CREATE DATABASE IF NOT EXISTS `alocoimbra` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `alocoimbra`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aluguers`
+-- Estrutura da tabela `aluguers`
 --
 
-DROP TABLE IF EXISTS `aluguers`;
 CREATE TABLE IF NOT EXISTS `aluguers` (
   `Alojamento` varchar(32) NOT NULL,
   `Qualidade` set('excelente','muito bom','bom','razoavel') NOT NULL,
@@ -31,17 +39,20 @@ CREATE TABLE IF NOT EXISTS `aluguers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `aluguers`
+-- Extraindo dados da tabela `aluguers`
 --
 
+INSERT INTO `aluguers` (`Alojamento`, `Qualidade`, `Preco_mes`, `Preco_semana`, `Preco_dia`, `Ordem`) VALUES
+('Individual', 'muito bom', 140, 0, 0, 1),
+('Duplo', 'muito bom', 100, 0, 0, 2),
+('Individual', 'bom', 155, 0, 0, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `imagens`
+-- Estrutura da tabela `imagens`
 --
 
-DROP TABLE IF EXISTS `imagens`;
 CREATE TABLE IF NOT EXISTS `imagens` (
   `ID` int(11) NOT NULL,
   `Ordem` int(11) NOT NULL,
@@ -49,18 +60,12 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   KEY `Ordem` (`Ordem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `imagens`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `locais`
+-- Estrutura da tabela `locais`
 --
 
-DROP TABLE IF EXISTS `locais`;
 CREATE TABLE IF NOT EXISTS `locais` (
   `Nome` varchar(64) NOT NULL,
   `Descricao` mediumtext NOT NULL,
@@ -70,20 +75,20 @@ CREATE TABLE IF NOT EXISTS `locais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `locais`
+-- Extraindo dados da tabela `locais`
 --
 
-INSERT INTO `locais` VALUES('Pólo 1', '<p>O local central da universidade. Aqui ficam localizados vários serviços e departamentos, com:</p><ul><li>Direito<li>Letras<li>Medicina<li>Matemática<li>Física<li>Química<li>Antropologia<li>Arquitectura<li>Botânica<li>Zoologia<li>Psicologia</ul>', -8.424282, 40.208089);
-INSERT INTO `locais` VALUES('Pólo 2', '<p>Aqui fica localizada a Faculdade de Ciências e Tecnologias, bem como os restantes departamentos constituintes desta faculdade:</p><ul><li>Engenharia Civil<li>Engenharia Electrotécnica e Computadores<li>Engenharia Informática<li>Engenharia Mecânica<li>Engenharia Química</ul>', -8.415634, 40.186288);
-INSERT INTO `locais` VALUES('Pólo 3', '<p>Perto dos Hospitais da Universidade de Coimbra, neste pólo estão localizados alguns departamentos, como Farmácia e Medicina.</p>', -8.461056, 40.197981);
+INSERT INTO `locais` (`Nome`, `Descricao`, `Longitude`, `Latitude`) VALUES
+('Pólo 1', '<p>O local central da universidade. Aqui ficam localizados vários serviços e departamentos, com:</p><ul><li>Direito<li>Letras<li>Medicina<li>Matemática<li>Física<li>Química<li>Antropologia<li>Arquitectura<li>Botânica<li>Zoologia<li>Psicologia</ul>', -8.424282, 40.208089),
+('Pólo 2', '<p>Aqui fica localizada a Faculdade de Ciências e Tecnologias, bem como os restantes departamentos constituintes desta faculdade:</p><ul><li>Engenharia Civil<li>Engenharia Electrotécnica e Computadores<li>Engenharia Informática<li>Engenharia Mecânica<li>Engenharia Química</ul>', -8.415634, 40.186288),
+('Pólo 3', '<p>Perto dos Hospitais da Universidade de Coimbra, neste pólo estão localizados alguns departamentos, como Farmácia e Medicina.</p>', -8.461056, 40.197981);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ordens`
+-- Estrutura da tabela `ordens`
 --
 
-DROP TABLE IF EXISTS `ordens`;
 CREATE TABLE IF NOT EXISTS `ordens` (
   `ID` int(11) NOT NULL,
   `Visivel` tinyint(1) NOT NULL,
@@ -118,19 +123,20 @@ CREATE TABLE IF NOT EXISTS `ordens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ordens`
+-- Extraindo dados da tabela `ordens`
 --
 
-INSERT INTO `ordens` VALUES(0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, '', 'Rua do Caralho, 123', 'A1', 'Filho de uma Pega', '947852468', 'porra_para_isto@fuckit.com', 2013, 1, 12, 'masculino', 'bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-07-10', '2013-08-06');
-INSERT INTO `ordens` VALUES(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, '', 'Rua da merda', '69', 'Pila man', '999999999', 'merda@gah.com', 2011, 5, 6, 'feminino', 'razoavel', 'razoavel', 'razoavel', 'razoavel', 'apartamento', '2013-10-01', '2013-10-01');
+INSERT INTO `ordens` (`ID`, `Visivel`, `Certificacao`, `Senhorio`, `Lavagem_roupa`, `Mobilado`, `Animais`, `Visitas`, `Agua`, `Luz`, `Gas`, `Internet`, `Outras_despesas`, `Morada`, `Zona`, `Proprietario`, `Contacto`, `Email`, `Inscricao_ano`, `Numero_pessoas`, `Min_meses`, `Sexo`, `Cozinha`, `Casa_de_banho`, `Dimensoes`, `Estado_casa`, `Tipo`, `Visita`, `Pagamento`) VALUES
+(1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', 'Rua António José de Almeida, 65 - R/c', 'D3', 'Adilia dos Santos Sousa', '239828611;963535340', '', 2011, 4, 12, 'feminino', 'muito bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-11-01', '2013-11-01'),
+(2, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 'TV cabo', 'Rua da saragoça, nº2', 'D3', 'Ana Luisa Martins Leite', '966124420', '', 2010, 2, 12, 'ambos', 'muito bom', 'muito bom', 'muito bom', 'muito bom', 'quarto', '2013-11-02', '2013-11-02'),
+(3, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, '', 'Rua Padre António Vieira, 16, nº1', 'D4', 'António Manuel Fonseca Oliveira Neto', '967766049', '', 2012, 10, 6, 'ambos', 'bom', 'muito bom', 'bom', 'muito bom', 'quarto', '2013-11-14', '2013-11-14');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pontoszonas`
+-- Estrutura da tabela `pontoszonas`
 --
 
-DROP TABLE IF EXISTS `pontoszonas`;
 CREATE TABLE IF NOT EXISTS `pontoszonas` (
   `Nome` varchar(4) NOT NULL,
   `Latitude` double NOT NULL,
@@ -138,25 +144,25 @@ CREATE TABLE IF NOT EXISTS `pontoszonas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pontoszonas`
+-- Extraindo dados da tabela `pontoszonas`
 --
 
-INSERT INTO `pontoszonas` VALUES('D4', 40.20734, -8.42943);
-INSERT INTO `pontoszonas` VALUES('D4', 40.20734, -8.42075);
-INSERT INTO `pontoszonas` VALUES('D4', 40.21116, -8.42075);
-INSERT INTO `pontoszonas` VALUES('D4', 40.21116, -8.42943);
-INSERT INTO `pontoszonas` VALUES('D3', 40.21116, -8.42943);
-INSERT INTO `pontoszonas` VALUES('D3', 40.21116, -8.42075);
-INSERT INTO `pontoszonas` VALUES('D3', 40.21498, -8.42075);
-INSERT INTO `pontoszonas` VALUES('D3', 40.21498, -8.42943);
+INSERT INTO `pontoszonas` (`Nome`, `Latitude`, `Longitude`) VALUES
+('D4', 40.20734, -8.42943),
+('D4', 40.20734, -8.42075),
+('D4', 40.21116, -8.42075),
+('D4', 40.21116, -8.42943),
+('D3', 40.21116, -8.42943),
+('D3', 40.21116, -8.42075),
+('D3', 40.21498, -8.42075),
+('D3', 40.21498, -8.42943);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `zonas`
+-- Estrutura da tabela `zonas`
 --
 
-DROP TABLE IF EXISTS `zonas`;
 CREATE TABLE IF NOT EXISTS `zonas` (
   `Nome` varchar(4) NOT NULL,
   `Cor` varchar(8) NOT NULL,
@@ -164,8 +170,13 @@ CREATE TABLE IF NOT EXISTS `zonas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `zonas`
+-- Extraindo dados da tabela `zonas`
 --
 
-INSERT INTO `zonas` VALUES('D3', '00FF00');
-INSERT INTO `zonas` VALUES('D4', '00FF00');
+INSERT INTO `zonas` (`Nome`, `Cor`) VALUES
+('D3', '00FF00'),
+('D4', '00FF00');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
