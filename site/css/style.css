@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+body{
+	background:#666;	
+}
+
 * {
 	padding:0;
 	margin:0;
@@ -81,7 +85,7 @@
 .right {
 	float:right;
 	width:650px;
-	background: #000;
+	background: #666
 }
 
 .head {
@@ -107,6 +111,11 @@
 	float: right;
 }
 
+.opcao{
+	font-size: 16px;
+	width: 200px;
+}
+
 .despesa{
 	margin-left: 40px;
 }
@@ -119,7 +128,9 @@
 
 /* ..:: Paginas ::..*/
 .lista {
+	cursor:pointer;
 	width:600px;
+	height:100px;
 	background:#CCC;
 	margin-right:auto;
 	margin-left:auto;
@@ -148,3 +159,17 @@
 	border: 2px solid black;
 	white-space: nowrap;
 }
+
+#foto{
+	width:100px;
+	height:100px;
+	float:left;	
+	background-color:inherit;
+}
+
+#logo_contactos{
+	height:100px;
+	width:100px;
+	float:left;	
+}
+

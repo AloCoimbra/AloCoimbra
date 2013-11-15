@@ -3,10 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>AloCoimbra</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
     	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap.slider.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -28,6 +28,7 @@
                     <li><a href="/">Lista</a></li>
                     <li><a href="/mapa">Mapa</a></li>
                     <li><a href="/contactos">Contactos</a></li>
+
                 </ul>
                 <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
             </div>
