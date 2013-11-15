@@ -10,6 +10,12 @@
     </head>
 
     <body>
+        <?
+            require 'lib/QuickSQL.php';
+            require 'lib/ImageClip.php';
+            new QuickSQL('alocoimbra', 'root', 'root');
+        ?>
+        
         <div id="fb-root"></div>
 		<script>
 			(function(d, s, id) {
@@ -28,7 +34,6 @@
                     <li><a href="/">Lista</a></li>
                     <li><a href="/mapa">Mapa</a></li>
                     <li><a href="/contactos">Contactos</a></li>
-
                 </ul>
                 <div class="fb-like" data-href="https://www.facebook.com/AloCoimbra" data-width="55" data-height="65" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
             </div>

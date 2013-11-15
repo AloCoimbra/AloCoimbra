@@ -2,7 +2,7 @@
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="js/bootstrap.slider.js"></script>
-        
+      
 <script type="text/javascript">
     $(document).ready(function() {
         $('.slider').slider({
@@ -40,9 +40,9 @@
         <!-- .:: depois meter para ir buscar às areas à BD ::. -->
         <select name="cb1" class="opcao" size="1">
           <option selected value="Indiferente"></option>
-          <option value="A1">A1</option>
-          <option value="A2">A2</option>
-          <option value="A3">A3</option>
+          <? foreach ($zonas->Find('*','') as $zona) { ?>
+            <option value="<?= $zona['Nome'] ?>"><?= $zona['Nome'] ?></option>
+          <? } ?>
         </select>
         <br>
         
