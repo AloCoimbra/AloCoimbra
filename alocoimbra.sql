@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 15-Nov-2013 às 00:08
+-- Data de Criação: 15-Nov-2013 às 16:45
 -- Versão do servidor: 5.6.12-log
 -- versão do PHP: 5.4.12
 
@@ -29,6 +29,7 @@ USE `alocoimbra`;
 --
 
 CREATE TABLE IF NOT EXISTS `aluguers` (
+  `ID` int(11) NOT NULL,
   `Alojamento` varchar(32) NOT NULL,
   `Qualidade` set('excelente','muito bom','bom','razoavel') NOT NULL,
   `Preco_mes` int(11) NOT NULL,
@@ -42,10 +43,10 @@ CREATE TABLE IF NOT EXISTS `aluguers` (
 -- Extraindo dados da tabela `aluguers`
 --
 
-INSERT INTO `aluguers` (`Alojamento`, `Qualidade`, `Preco_mes`, `Preco_semana`, `Preco_dia`, `Ordem`) VALUES
-('Individual', 'muito bom', 140, 0, 0, 1),
-('Duplo', 'muito bom', 100, 0, 0, 2),
-('Individual', 'bom', 155, 0, 0, 3);
+INSERT INTO `aluguers` (`ID`, `Alojamento`, `Qualidade`, `Preco_mes`, `Preco_semana`, `Preco_dia`, `Ordem`) VALUES
+(0, 'Individual', 'muito bom', 140, 0, 0, 1),
+(0, 'Duplo', 'muito bom', 100, 0, 0, 2),
+(0, 'Individual', 'bom', 155, 0, 0, 3);
 
 -- --------------------------------------------------------
 
