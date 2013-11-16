@@ -173,3 +173,13 @@ body{
 	float:left;	
 }
 
+#text{
+	width:200px;
+	display: inline-block;
+}
+
+#text1{
+	width:150px;
+	display: inline-block;
+}
+

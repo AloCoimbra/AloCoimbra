@@ -3,8 +3,8 @@
 ?>
 
 <script>
-	function detalhes(){
-		var win=window.open('http://google.com', '_blank');
+	function detalhes($aux){
+		var win=window.open('detalhes?id='+$aux, '_blank');
   		win.focus();
 	}
 </script>
@@ -15,18 +15,18 @@
     <? foreach ($aluguers->Find('*','') as $aluguer) { ?>
     
         <br>
-        <div class="lista" onclick="detalhes()">
+        <div class="lista" onclick="detalhes(<?= $aluguer['ID'] ?>)">
             <div id = "foto">
-                <img src="images/Foto.png" alt="Foto">
+                <img src="images/logo_alocoimbra.png" alt="Foto">
             </div>
             <div style="margin-left:150px;">
                 
                 <? foreach ($ordens->Find('*','Where ID = '. $aluguer['Ordem']) as $ordem) {}?>
-
+				Alojamento: <?= $ordem['Tipo'] ?><br>
                 Zona: <?= $ordem['Zona'] ?><br>
                 Morada: <?= $ordem['Morada'] ?><br>
                 Sexo: <?= $ordem['Sexo'] ?><br>
-            	Preço:<?= $aluguer['Preco_mes'] ?>€<br>
+            	Preço: <?= $aluguer['Preco_mes'] ?>€<br>
             </div> 
         </div>
      <? } ?>
