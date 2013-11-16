@@ -1,20 +1,16 @@
 <?
     include "pesquisa.html";
+    require 'lib/QuickSQL.php';
+    require 'lib/ImageClip.php';
+    new QuickSQL('alocoimbra', 'root', 'root');
 ?>
-
-<script>
-	function detalhes($aux){
-		var win=window.open('detalhes?id='+$aux, '_blank');
-  		win.focus();
-	}
-</script>
 
 <div class="right">
 	<div class="head">Lista:</div>
     
-    <div class="list" onclick="detalhes(<?= $aluguer['ID'] ?>)">
+    <div class="list" target="_blank" href="/detalhes/<?= $aluguer['ID']?>">
         <? foreach ($ordens->Find('*','') as $ordem) { ?>
-            <img src="images/Filler1.jpg">
+            <img src="<?=LoadImage('/images/', 'Filler1.jpg', 100, 100)?>">
             <div>
     			Alojamento: <?= $ordem['Tipo'] ?><br>
                 Zona: <?= $ordem['Zona'] ?><br>

@@ -1,5 +1,7 @@
 <?
     include "pesquisa.html";
+    require 'lib/QuickSQL.php';
+    new QuickSQL('alocoimbra', 'root', 'root');
 ?>
 
 <div class="right">

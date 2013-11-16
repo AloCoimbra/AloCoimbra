@@ -10,12 +10,6 @@
     </head>
 
     <body>
-        <?
-            require 'lib/QuickSQL.php';
-            require 'lib/ImageClip.php';
-            new QuickSQL('alocoimbra', 'root', 'root');
-        ?>
-        
         <div id="fb-root"></div>
 		<script>
 			(function(d, s, id) {

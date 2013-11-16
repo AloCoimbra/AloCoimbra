@@ -1,5 +1,4 @@
 <div>
-	<br>
     <div>
     	<img src="/images/Logo.png" alt="AloCoimbra">
     	<div>
@@ -20,7 +19,7 @@
         <div>
             Morada: Rua Padre António Vieira 3000-315 Coimbra <br>
             Email: geral@academica.pt<br>
-            Telefone: 239410400   |    Fax GERAL: 239410439<br>
+            Telefone: 239410400 | Fax GERAL: 239410439<br>
             <a href="http://www.academica.pt/">www.academica.pt</a><br>
         </div>
     </div>

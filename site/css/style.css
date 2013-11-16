@@ -23,7 +23,7 @@ body{
 	margin-top: 10px;
 	margin-right:auto;
 	margin-left:auto;
-	background-image:url(../images/Topo.png);
+	background-image:url(/images/Topo.png);
 	background-repeat:no-repeat;
 }
 
@@ -31,7 +31,7 @@ body{
 /* ..:: Menu ::..*/
 #menu { 
 	width:996px;
-	background-image:url(../images/Menu.png);
+	background-image:url(/images/Menu.png);
 	background-repeat:no-repeat;
 	height: 40px;
 	margin-right:auto;
@@ -166,11 +166,6 @@ body{
 
 .text label {
 	width: 200px;
-}
-
-.text img {
-	width: 100px;
-	height: 100px;
 }
 
 .text div {

@@ -1,4 +1,8 @@
 <?
+	require 'lib/QuickSQL.php';
+    require 'lib/ImageClip.php';
+    new QuickSQL('alocoimbra', 'root', 'root');
+
 	$id = @((int) $_GET['id']);
 	$results = $ordens->Find('*', 'WHERE id=' . $id);
 
@@ -18,11 +22,9 @@
 <div class="text">
 	<div class="sliderFrame">
 	    <div class="slider">
-	        <img src="/images/Filler1.jpg" />
-	        <img src="/images/Filler2.jpg" />
-	        <img src="/images/Filler3.jpg" />
-	        <img src="/images/Filler4.jpg" />
-	        <img src="/images/Filler5.jpg" />
+	        <img src="<?=LoadImage('/images/', 'Filler1.jpg', 100, 100)?>"/>
+	        <img src="<?=LoadImage('/images/', 'Filler2.jpg', 100, 100)?>"/>
+	        <img src="<?=LoadImage('/images/', 'Filler3.jpg', 100, 100)?>"/>
 	    </div>
 	</div>
 
