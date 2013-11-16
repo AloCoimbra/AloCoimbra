@@ -12,7 +12,7 @@
 <div class="right">
 	<div class="head">Lista:</div>
     
-    <div class="lista" onclick="detalhes(<?= $aluguer['ID'] ?>)">
+    <div class="list" onclick="detalhes(<?= $aluguer['ID'] ?>)">
         <? foreach ($ordens->Find('*','') as $ordem) { ?>
             <img src="images/Filler1.jpg">
             <div>

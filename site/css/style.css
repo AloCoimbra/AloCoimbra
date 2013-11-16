@@ -127,7 +127,7 @@ body{
 
 
 /* ..:: Paginas ::..*/
-.lista {
+.list {
 	cursor:pointer;
 	width:600px;
 	height:100px;
@@ -136,7 +136,7 @@ body{
 	margin-left:auto;
 }
 
-.lista > {
+.list > {
 	color:#FFF;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -148,7 +148,7 @@ body{
 	height: 650px;
 }
 
-.label {
+#map .label {
 	color: red;
 	background-color: white;
 	font-family: "Lucida Grande", "Arial", sans-serif;
@@ -160,26 +160,19 @@ body{
 	white-space: nowrap;
 }
 
-.foto {
-	width:100px;
-	height:100px;
-	float:left;	
-	background-color:inherit;
+.text {
+	background-color: #CCCCCC
 }
 
-.logo {
-	height:100px;
-	width:100px;
-	float:left;	
+.text label {
+	width: 200px;
 }
 
-#text {
-	width:200px;
-	display: inline-block;
+.text img {
+	width: 100px;
+	height: 100px;
 }
 
-#text1 {
-	width:150px;
-	display: inline-block;
+.text div {
+	margin-left: 20px;
 }
-
