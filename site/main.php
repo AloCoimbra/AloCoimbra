@@ -3,10 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>AloCoimbra</title>
-    	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    	<link rel="shortcut icon" href="/images/Favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap.slider.css">
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/css/bootstrap.slider.css">
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>

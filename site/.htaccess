@@ -1,7 +1,6 @@
 RewriteEngine on
-ErrorDocument 404 main.php?page=404
+ErrorDocument 404 /404
 
-RewriteRule ^$ main.php?page=lista [L]
-RewriteRule ^mapa?$ main.php?page=mapa [L]
-RewriteRule ^contactos?$ main.php?page=contactos [L]
-RewriteRule ^detalhes?$ main.php?page=detalhes [L]
+RewriteRule ^$ lista
+RewriteRule ^([^./"]+)/?$ main.php?page=$1 [L]
+RewriteRule ^detalhes/(\d*)/?$ main.php?page=detalhes&id=$1 [L]

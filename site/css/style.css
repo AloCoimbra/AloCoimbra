@@ -160,25 +160,25 @@ body{
 	white-space: nowrap;
 }
 
-#foto{
+.foto {
 	width:100px;
 	height:100px;
 	float:left;	
 	background-color:inherit;
 }
 
-#logo_contactos{
+.logo {
 	height:100px;
 	width:100px;
 	float:left;	
 }
 
-#text{
+#text {
 	width:200px;
 	display: inline-block;
 }
 
-#text1{
+#text1 {
 	width:150px;
 	display: inline-block;
 }
