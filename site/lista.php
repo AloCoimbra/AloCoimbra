@@ -5,21 +5,20 @@
 
 <div class="right">
 	<div class="head">Lista:</div>
-    
-    <div class="list">
-        <? foreach ($ordens->Find('*','') as $ordem) { ?>
+    <? foreach ($ordens->Find('*','') as $ordem) { ?>
+        <div class="list">
             <a target="_blank" href="/detalhes/<?=$ordem['ID'] + 1?>">
                 <img src="<?=LoadImage('/images/', 'Filler1.jpg', 100, 100)?>">
-                <div>
-        			Alojamento: <?= $ordem['Tipo'] ?><br>
-                    Zona: <?= $ordem['Zona'] ?><br>
-                    Morada: <?= $ordem['Morada'] ?><br>
-                    Sexo: <?= $ordem['Sexo'] ?><br>
-                	Preço: <?= $aluguer['Preco_mes'] ?>€<br>
+                <div class="list_text">
+                	<div>Avaliação: XXXX</div>
+                    <label><?= $ordem['Tipo'] ?></label><br>
+                    Morada: <?= $ordem['Morada'] ?> (<?= $ordem['Zona'] ?>)<br>
+                    Género: <?= $ordem['Sexo'] ?><br>
+                    Preço: XXX€ a XXX€<br>
                 </div>
             </a>
-        <? } ?>
-    </div>
+        </div>
+	<? } ?>
 </div> 
  
         

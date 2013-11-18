@@ -9,7 +9,7 @@
 	if (count($results) == 0)
 		include '404.html';
 	else {
-		$ordem = $results[0];
+		$ordem = $results[0];	
 
 		function toggle($v) { 
 			return $v == 1 ? "Sim" : "Não";
@@ -22,63 +22,69 @@
 <div class="text">
 	<div id="sliderFrame">
 	    <div id="slider">
-	        <img src="<?=LoadImage('/images/', 'Filler1.jpg', 700, 306)?>"/>
-	        <img src="<?=LoadImage('/images/', 'Filler2.jpg', 700, 306)?>"/>
-	        <img src="<?=LoadImage('/images/', 'Filler3.jpg', 700, 306)?>"/>
+	        <img src="/images/Filler1.jpg" />
+	        <img src="/images/Filler2.jpg" />
+	        <img src="/images/Filler3.jpg" />
 	    </div>
 	</div>
 
-    <label>Contacto:</label>
-    <div>
-        <?= $ordem['Proprietario']?>
-        <?= $ordem['Contacto']?>
-        <?= $ordem['Email']?>
+	<div class="detalhe_contac">
+        <p><label>Contacto:</label></p>
+        <div>
+            <p><?= $ordem['Proprietario']?></p>
+            <p><?= $ordem['Contacto']?></p>
+            <p><?= $ordem['Email']?></p>
+        </div>
     </div>
 
-	<label>Alojamento:</label>
-	<?= $ordem['Tipo']?>
+	<p><label>Alojamento:</label>
+	<?= $ordem['Tipo']?></p>
 
-    <label>Zona:</label>
-    <?= $ordem['Zona']?>
+    <p><label>Zona:</label>
+    <?= $ordem['Zona']?></p>
 
-    <label> Morada:</label>
-    <?= $ordem['Morada']?>
+    <p><label> Morada:</label>
+    <?= $ordem['Morada']?></p>
 
-    <label>Géneros Aceites:</label>
-    <?= $ordem['Sexo'] ?>
+    <p><label>Géneros Aceites:</label>
+    <?= $ordem['Sexo'] ?></p>
 
-	<label>Numero mínimo de meses:</label>
-	<?= $ordem['Min_meses']?>
+	<p><label>Numero mínimo de meses:</label>
+	<?= $ordem['Min_meses']?></p>
 
-	<label>Capacidade total:</label>
-	<?= $ordem['Numero_pessoas']?>
+	<p><label>Capacidade total:</label>
+	<?= $ordem['Numero_pessoas']?></p>
 
-	<label>Mobilado:</label>
-	<?= toggle($ordem['Mobilado'])?>
+	<p><label>Mobilado:</label>
+	<?= toggle($ordem['Mobilado'])?></p>
 
-	<label>Senhorio Residente:</label>
-	<?= toggle($ordem['Senhorio'])?>
+	<p><label>Senhorio Residente:</label>
+	<?= toggle($ordem['Senhorio'])?></p>
 
-	<label>Máquina de Lavar Roupa:</label>
-	<?= toggle($ordem['Lavagem_roupa'])?>
+	<p><label>Máquina de Lavar Roupa:</label>
+	<?= toggle($ordem['Lavagem_roupa'])?></p>
 
-	<label>Inclui Outras despesas:</label>
-	<div>
-		<label> Agua: </label> <?=toggle($ordem['Agua'])?>
-		<label> Luz: </label> <?=toggle($ordem['Luz'])?>
-		<label> Gás: </label> <?=toggle($ordem['Gas'])?>
-		<label> Internet: </label> <?=toggle($ordem['Internet'])?>
-		<label> Outras despesas: </label> <?=toggle($ordem['Outras_despesas'])?>
+	<p><label>Inclui Outras despesas:</label></p>
+	<div class="detalhe_extra">
+		<p><label> Agua: </label> <?=toggle($ordem['Agua'])?></p>
+		<p><label> Luz: </label> <?=toggle($ordem['Luz'])?></p>
+		<p><label> Gás: </label> <?=toggle($ordem['Gas'])?></p>
+		<p><label> Internet: </label> <?=toggle($ordem['Internet'])?></p>
+		<p><label> Outras despesas: </label> <?=toggle($ordem['Outras_despesas'])?></p>
 	</div>
 
-	<label>Permite:</label>
-	<div>
-		<label> Visitas: </label> <?=toggle($ordem['Visitas'])?>
-		<label> Animais: </label> <?=toggle($ordem['Animais'])?>
+	<p><label>Permite:</label></p>
+	<div class="detalhe_extra">
+		<p><label> Visitas: </label> <?=toggle($ordem['Visitas'])?></p>
+		<p><label> Animais: </label> <?=toggle($ordem['Animais'])?></p>
 	</div>
 
 	<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
-		<label>Um Aluguer neste Local!</label>
+    	<div class="detalhe_aluguer">
+			<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
+            <p><label>Preço por mês:</label> <?=$aluguer['Preco_mes']?> €</p>
+            <p><label>Qualidade do quarto:</label> <?=$aluguer['Qualidade']?></p>
+        </div>
 	<? } ?>
 </div>
 
