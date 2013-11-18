@@ -3,4 +3,4 @@ ErrorDocument 404 /404
 
 RewriteRule ^$ lista
 RewriteRule ^([^./"]+)/?$ main.php?page=$1 [L]
-RewriteRule ^detalhes/(\d*)/?$ main.php?page=detalhes&id=$1 [L]
+RewriteRule ^detalhes/(\d+)/?$ main.php?page=detalhes&id=$1 [L]

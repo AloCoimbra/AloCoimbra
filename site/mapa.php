@@ -1,8 +1,4 @@
-<?
-    include "pesquisa.html";
-    require 'lib/QuickSQL.php';
-    new QuickSQL('alocoimbra', 'root', 'root');
-?>
+<? require 'pesquisa.html'; ?>
 
 <div class="right">
 	<div class="head">Mapa:</div>

@@ -3,7 +3,7 @@
     require 'lib/ImageClip.php';
     new QuickSQL('alocoimbra', 'root', 'root');
 
-	$id = @((int) $_GET['id']);
+	$id = @((int) $_GET['id']) - 1;
 	$results = $ordens->Find('*', 'WHERE id=' . $id);
 
 	if (count($results) == 0)
@@ -20,11 +20,11 @@
 <script src="/js/image-slider.js" type="text/javascript"></script>
 
 <div class="text">
-	<div class="sliderFrame">
-	    <div class="slider">
-	        <img src="<?=LoadImage('/images/', 'Filler1.jpg', 100, 100)?>"/>
-	        <img src="<?=LoadImage('/images/', 'Filler2.jpg', 100, 100)?>"/>
-	        <img src="<?=LoadImage('/images/', 'Filler3.jpg', 100, 100)?>"/>
+	<div id="sliderFrame">
+	    <div id="slider">
+	        <img src="<?=LoadImage('/images/', 'Filler1.jpg', 700, 306)?>"/>
+	        <img src="<?=LoadImage('/images/', 'Filler2.jpg', 700, 306)?>"/>
+	        <img src="<?=LoadImage('/images/', 'Filler3.jpg', 700, 306)?>"/>
 	    </div>
 	</div>
 
