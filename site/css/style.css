@@ -181,6 +181,7 @@ a, a:hover, a:focus{
 
 .text {
 	background-color: #CCCCCC;
+	padding-bottom: 50px;
 }
 
 .text label {
@@ -235,11 +236,16 @@ a, a:hover, a:focus{
 
 .detalhe_contac{
 	float:right;
-	margin:0 150px 0 0;	
+	margin:50px 50px 50px 0;	
+	height:50%;
 }
 
 .detalhe_contac p label{
 	margin-left:0;	
+}
+
+.detalhe_contac p{
+	width:400px;	
 }
 
 .detalhe_extra{
@@ -252,7 +258,11 @@ a, a:hover, a:focus{
 }
 
 .detalhe_aluguer{
-	padding:50px 0 50px 100px;;	
-	
+	margin:50px 0 150px 0;
+	/*background-color:#999;*/
+	width:40%;
 }
+
+
+
 

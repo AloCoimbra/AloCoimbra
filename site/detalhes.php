@@ -29,25 +29,26 @@
 	</div>
 
 	<div class="detalhe_contac">
-        <p><label>Contacto:</label></p>
-        <div>
-            <p><?= $ordem['Proprietario']?></p>
-            <p><?= $ordem['Contacto']?></p>
-            <p><?= $ordem['Email']?></p>
-        </div>
+        <p><label>Géneros Aceites:</label>
+        <?= $ordem['Sexo'] ?></p>
+
+        <p><label>Alojamento:</label>
+        <?= $ordem['Tipo']?></p>
+
+        <p><label>Zona:</label>
+        <?= $ordem['Zona']?></p>
+
+        <p><label> Morada:</label>
+        <?= $ordem['Morada']?></p>
     </div>
 
-	<p><label>Alojamento:</label>
-	<?= $ordem['Tipo']?></p>
-
-    <p><label>Zona:</label>
-    <?= $ordem['Zona']?></p>
-
-    <p><label> Morada:</label>
-    <?= $ordem['Morada']?></p>
-
-    <p><label>Géneros Aceites:</label>
-    <?= $ordem['Sexo'] ?></p>
+	<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
+    	<div class="detalhe_aluguer">
+			<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
+            <p><label>Preço por mês:</label> <?=$aluguer['Preco_mes']?> €</p>
+            <p><label>Qualidade do quarto:</label> <?=$aluguer['Qualidade']?></p>
+        </div>
+	<? } ?>
 
 	<p><label>Numero mínimo de meses:</label>
 	<?= $ordem['Min_meses']?></p>
@@ -60,6 +61,15 @@
 
 	<p><label>Senhorio Residente:</label>
 	<?= toggle($ordem['Senhorio'])?></p>
+
+	<div class="detalhe_contac">
+        <p><label>Contacto:</label></p>
+        <div>
+            <p><?= $ordem['Proprietario']?></p>
+            <p><?= $ordem['Contacto']?></p>
+            <p><?= $ordem['Email']?></p>
+        </div>
+    </div>
 
 	<p><label>Máquina de Lavar Roupa:</label>
 	<?= toggle($ordem['Lavagem_roupa'])?></p>
@@ -78,14 +88,6 @@
 		<p><label> Visitas: </label> <?=toggle($ordem['Visitas'])?></p>
 		<p><label> Animais: </label> <?=toggle($ordem['Animais'])?></p>
 	</div>
-
-	<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
-    	<div class="detalhe_aluguer">
-			<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
-            <p><label>Preço por mês:</label> <?=$aluguer['Preco_mes']?> €</p>
-            <p><label>Qualidade do quarto:</label> <?=$aluguer['Qualidade']?></p>
-        </div>
-	<? } ?>
 </div>
 
 <? } ?>
