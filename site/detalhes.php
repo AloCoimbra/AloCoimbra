@@ -40,13 +40,15 @@
 	<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
     	<div class="detalhe_aluguer">
 			<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
-            <p><label>Preço por mês:</label> <?=$aluguer['Preco_mes']?> €</p>
-            <p><label>Qualidade do quarto:</label> <?=$aluguer['Qualidade']?></p>
+			<p><label>Qualidade do Quarto:</label> <?=qualidade($aluguer['Qualidade'])?></p>
+            <p><label>Preço por Mês:</label> <?=$aluguer['Preco']?> €</p>
         </div>
 	<? } ?>
 
-	<p><label>Numero mínimo de meses:</label>
-	<?= $ordem['Min_meses']?></p>
+	<? if ($ordem['Min_meses'] > 0) { ?>
+		<p><label>Numero mínimo de meses:</label>
+		<?= $ordem['Min_meses']?></p>
+	<?}?>
 
 	<p><label>Capacidade total:</label>
 	<?= $ordem['Numero_pessoas']?></p>
