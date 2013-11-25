@@ -12,6 +12,21 @@
     <div class="pesquisa">
         Tipo:
         <!-- Meter checkboxes, para se puder pesquisar múltiplos tipos! -->
+        <br>
+        <div class="despesa">
+            Quarto
+            <input type="checkbox" name="option1" class="opcao1" value="quarto">
+            <br>
+            Apartamento
+            <input type="checkbox" name="option1" class="opcao1" value="apartamento">
+            <br>
+            República
+            <input type="checkbox" name="option1" class="opcao1" value="republica">
+            <br>
+            Residência
+            <input type="checkbox" name="option1" class="opcao1" value="residencia">
+            <br> 
+        </div>
         
         Género: <br>
         <select name="cb1" class="opcao" size="1">
@@ -80,8 +95,9 @@
         <input type="checkbox" name="option1" class="opcao1" value="animais">
         <br><br>
         
+        <center>
         <p><a class="btn btn-primary btn-lg" role="button">Pesquisar</a></p>
-        
+        </center>
         <br>
      </div>
 </div>
