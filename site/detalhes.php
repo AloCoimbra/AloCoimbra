@@ -1,7 +1,6 @@
 <?
-	require 'lib/QuickSQL.php';
     require 'lib/ImageClip.php';
-    new QuickSQL('alocoimbra', 'root', 'root');
+    require 'database.php';
 
 	$id = @((int) $_GET['id']) - 1;
 	$results = $ordens->Find('*', 'WHERE id=' . $id);
@@ -9,11 +8,7 @@
 	if (count($results) == 0)
 		include '404.html';
 	else {
-		$ordem = $results[0];	
-
-		function toggle($v) { 
-			return $v == 1 ? "Sim" : "Não";
-		}
+		$ordem = $results[0];
 ?>
 
 <link href="/css/image-slider.css" rel="stylesheet" type="text/css"/>

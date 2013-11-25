@@ -103,6 +103,10 @@ a, a:hover, a:focus{
 	background: #666
 }
 
+.full {
+	width: 100%
+}
+
 .head {
 	background: #069;
 	color: #FFF;
@@ -163,8 +167,8 @@ a, a:hover, a:focus{
 }
 
 #map {
-	width: 650px;
-	height: 650px;
+	width: 979px;
+	height: 979px;
 }
 
 #map .label {

@@ -1,7 +1,4 @@
-<?
-  require 'lib/QuickSQL.php';
-  new QuickSQL('alocoimbra', 'root', 'root');
-?>
+<? require 'database.php'; ?>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery.js"><\/script>')</script>
@@ -24,14 +21,8 @@
     <div class="head">Pesquisa:</div>
 
     <div class="pesquisa">
-   		Tipo: <br>
-        <select name="cb1" class="opcao" size="1">
-          <option selected value="Quarto">Quarto</option>
-          <option value="Apartamento">Apartamento</option>
-          <option value="República">Republica</option>
-          <option value="Residência">Residencia</option>
-        </select>
-        <br>
+   		Tipo:
+        <!-- Meter checkboxes, para se puder pesquisar múltiplos tipos! -->
         
         Género: <br>
         <select name="cb1" class="opcao" size="1">
@@ -71,7 +62,7 @@
         <input type="checkbox" name="option1" class="opcao1" value="roupa">
         <br>
         
-        Despesas: 
+        Despesas Incluídas: 
         <br>
 		<div class="despesa">
         	Água
