@@ -15,21 +15,14 @@
 	
 	function LoadImage($dir, $name, $width, $height) {
 		$result = $dir . "{$width}x{$height}/" . $name;
-		$orig = $dir . $name;
 
-		if (IsNewer($orig, $result)) {
-			$file = new ImageResizer($orig);
+		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $result)) {
+			echo "PILLAS!";
+			$file = new ImageResizer($dir . $name);
 			$file->cropSize($width, $height);
 			$file->save($result);
 		}
 
 		return $result;
-	}
-	
-	function IsNewer($a, $b) {
-		$a = is_file($a) ? filemtime($a) : false;
-		$b = is_file($b) ? filemtime($b): false;
-		
-		return !$b or $a and $a > $b;
 	}
 ?>
