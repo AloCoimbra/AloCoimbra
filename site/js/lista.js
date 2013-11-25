@@ -7,17 +7,18 @@ $(document).ready(function() {
         value: [250,750]
     });
 
-    set = 1;
-    window.onscroll = function(e) {
-    	if (set && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        	$.ajax('/entradas/' + set).done(function(data) {
-        		if (data != '')
-			  		$('.right').append(data);
-			  	else
-			  		set = 0;
-			});
+    canQuery = true;
+    set = 0;
 
-			set++;
+    window.onscroll = function(e) {
+    	if (canQuery && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            canQuery = false;
+            set++;
+
+        	$.ajax('/entradas/' + set).done(function(data) {
+			  	$('.right').append(data);
+                canQuery = data != '';
+			});
     	}
 	};
 });
