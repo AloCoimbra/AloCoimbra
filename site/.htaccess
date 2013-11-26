@@ -1,8 +1,15 @@
 RewriteEngine on
+
+# Exceptions
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /[^\ ]+\.php($|\ )
+RewriteRule \.php$ / [F,L]
 ErrorDocument 404 /404
+
+# Statics
+RewriteRule ^$ lista
 RewriteRule ^admin/? - [L]
 
-RewriteRule ^$ lista
+# Dynamics
 RewriteRule ^(lista|mapa|contactos)/?$ main.php?page=$1 [L]
 RewriteRule ^detalhes/(\d+)/?$ main.php?page=detalhes&id=$1 [L]
 RewriteRule ^entradas/(\d+)/?$ entradas.php?set=$1 [L]
