@@ -1,8 +1,8 @@
 RewriteEngine on
 
 # Exceptions
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /[^\ ]+\.php($|\ )
-RewriteRule \.php$ / [F,L]
+RewriteCond %{THE_REQUEST} \.php
+RewriteRule \.php / [F,L]
 ErrorDocument 404 /404
 
 # Statics
