@@ -11,7 +11,6 @@
 
     <div class="pesquisa">
         Tipo:
-        <!-- Meter checkboxes, para se puder pesquisar múltiplos tipos! -->
         <br>
         <div class="despesa">
             Quarto
@@ -37,7 +36,6 @@
         <br>
         
         Localização: <br>
-        <!-- .:: depois meter para ir buscar às areas à BD ::. -->
         <select name="cb1" class="opcao" size="1">
           <option selected value="Indiferente"></option>
         </select>
@@ -55,7 +53,6 @@
         
         Preço: 
         <br>
-        <!-- .:: código do slider ::. -->
         <input type="text" class="slider">
         
         Mobilado:

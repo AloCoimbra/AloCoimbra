@@ -10,8 +10,12 @@ $(document).ready(function() {
     canQuery = true;
     set = 0;
 
+    console.log("hi");
     window.onscroll = function(e) {
-    	if (canQuery && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        console.log("yo");
+        console.log($(window).scrollTop() + $(window).height(),  $(document).height());
+    	if (canQuery && $(window).scrollTop() + $(window).height() + 80 >= $(document).height()) {
+            console.log("made query");
             canQuery = false;
             set++;
 
