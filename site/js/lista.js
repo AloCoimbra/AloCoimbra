@@ -18,7 +18,7 @@ $(document).ready(function() {
             set++;
 
         	$.ajax('/entradas/' + set).done(function(data) {
-			  	$('.right').append(data);
+			  	$('.list').append(data);
                 canQuery = data != '';
 			});
     	}

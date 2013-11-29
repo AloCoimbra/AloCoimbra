@@ -1,13 +1,13 @@
-<div class="text">
-    <div class = "contacto">
+<div class="contacto">
+    <div>
         <img src="/images/Logo.png" alt="AloCoimbra">
-        <p class="cont_titulo">A nossa equipa</p>
+        <h1>A nossa equipa</h1>
         <p><a target="_blank" href="https://www.facebook.com/AloCoimbra">www.facebook.com/AloCoimbra</a></p>
     </div>
      
-    <div class="contacto">   
+    <div>   
         <img src="/images/AAC.png"/>
-        <p class="cont_titulo">Associação Académica de Coimbra</p>
+        <h1>Associação Académica de Coimbra</h1>
         <p>
             Morada: Rua Padre António Vieira 3000-315 Coimbra <br>
             Email: geral@academica.pt<br>
@@ -16,9 +16,9 @@
         </p>
     </div>
     
-    <p class="cont_nota">
-        &nbsp;&nbsp;&nbsp;&nbsp;Se algum dos quartos não corresponder à certificação atribuida, informe a AAC para proceder a uma reclamação e/ou exclusão do alojamento em causa.
-    </p>
+    <span>
+       Se algum dos quartos não corresponder à certificação atribuida, informe a AAC para proceder a uma reclamação e/ou exclusão do alojamento em causa.
+    </span>
 </div>
  
         

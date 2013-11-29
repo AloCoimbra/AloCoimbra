@@ -14,7 +14,7 @@
 <link href="/css/image-slider.css" rel="stylesheet" type="text/css"/>
 <script src="/js/image-slider.js" type="text/javascript"></script>
 
-<div class="text">
+<div class="detalhes">
 	<div id="sliderFrame">
 	    <div id="slider">
 	        <img src="/images/Filler1.jpg" />
@@ -23,7 +23,7 @@
 	    </div>
 	</div>
 
-	<div class="detalhe_contac">
+	<div class="right">
         <p><label>Géneros Aceites:</label>
         <?= $ordem['Sexo'] ?></p>
 
@@ -37,13 +37,15 @@
         <?= $ordem['Morada']?></p>
     </div>
 
-	<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
-    	<div class="detalhe_aluguer">
-			<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
-			<p><label>Qualidade do Quarto:</label> <?=qualidade($aluguer['Qualidade'])?></p>
-            <p><label>Preço por Mês:</label> <?=$aluguer['Preco']?> €</p>
-        </div>
-	<? } ?>
+    <div class="list">
+		<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
+	    	<a>
+				<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
+				<p><label>Qualidade do Quarto:</label> <?=qualidade($aluguer['Qualidade'])?></p>
+	            <p><label>Preço por Mês:</label> <?=$aluguer['Preco']?> €</p>
+	        </a>
+		<? } ?>
+	</div>
 
 	<? if ($ordem['Min_meses'] > 0) { ?>
 		<p><label>Numero mínimo de meses:</label>
@@ -59,20 +61,18 @@
 	<p><label>Senhorio Residente:</label>
 	<?= toggle($ordem['Senhorio'])?></p>
 
-	<div class="detalhe_contac">
-        <p><label>Contacto:</label></p>
-        <div>
-            <p><?= $ordem['Proprietario']?></p>
-            <p><?= $ordem['Contacto']?></p>
-            <p><?= $ordem['Email']?></p>
-        </div>
+	<div class="right">
+        <p><label>Contacto:</label> </p>
+	    <p><?= $ordem['Proprietario']?></p>
+	    <p><?= $ordem['Contacto']?></p>
+	    <p><?= $ordem['Email']?></p>
     </div>
 
 	<p><label>Máquina de Lavar Roupa:</label>
 	<?= toggle($ordem['Lavagem_roupa'])?></p>
 
 	<p><label>Inclui Outras despesas:</label></p>
-	<div class="detalhe_extra">
+	<div class="extra">
 		<p><label> Agua: </label> <?=toggle($ordem['Agua'])?></p>
 		<p><label> Luz: </label> <?=toggle($ordem['Luz'])?></p>
 		<p><label> Gás: </label> <?=toggle($ordem['Gas'])?></p>
@@ -81,7 +81,7 @@
 	</div>
 
 	<p><label>Permite:</label></p>
-	<div class="detalhe_extra">
+	<div class="extra">
 		<p><label> Visitas: </label> <?=toggle($ordem['Visitas'])?></p>
 		<p><label> Animais: </label> <?=toggle($ordem['Animais'])?></p>
 	</div>

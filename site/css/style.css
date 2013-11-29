@@ -87,23 +87,22 @@ a, a:hover, a:focus{
 	margin: 15px 78px;
 }
 
-.left, .right {
+#conteudo >.left, >.right {
 	margin-bottom: 20px;
 }
 
-.left {
+#conteudo >.left {
 	float:left;
 	width:300px;
 	background: #CCCCCC;
 }
 
-.right {
+#conteudo >.right {
 	float:right;
 	width:650px;
-	background: #666
 }
 
-.full {
+#conteudo >.full {
 	width: 100%
 }
 
@@ -158,20 +157,22 @@ a, a:hover, a:focus{
 }
 
 
-/* ..:: Paginas ::..*/
+/* ..:: List ::..*/
 .list {
-	cursor:pointer;
-	width:600px;
-	height:110px;
-	background:#CCC;
-	margin: 20px auto 20px auto;
+	background: #666;
 }
 
-.list > {
-	color:#FFF;
-	font-size: 18px;
-	font-family: Arial, Helvetica, sans-serif;
-	line-height: 200%;
+.list a {
+	display: block;
+	background:#CCC;
+	height: 110px;
+	margin: 20px auto 20px auto;
+	width: 92%;
+	cursor:pointer;
+}
+
+.list a div {
+	margin-left:115px;	
 }
 
 .list img {
@@ -179,6 +180,17 @@ a, a:hover, a:focus{
 	padding: 5px 0 5px 5px;
 }
 
+.list h1 {
+	font-size:16px;
+}
+
+.list span {
+	float:right;
+	margin-right: 10px;
+}
+
+
+/* ..:: Map ::..*/
 #map {
 	width: 979px;
 	height: 979px;
@@ -196,89 +208,84 @@ a, a:hover, a:focus{
 	white-space: nowrap;
 }
 
-.text {
-	background-color: #CCCCCC;
-	padding-bottom: 50px;
-}
 
-.text label {
-	width: 200px;
-}
-
-.text p label {
-	width: 200px;
-	margin-left:50px;
-}
-
+/* ..:: Contacto ::..*/
 .contacto {
+	background-color: #CCCCCC;
+}
+
+.contacto div {
 	clear:both;
 	padding:50px 0 0 50px;
 }
 
-.contacto img{
+.contacto img {
 	float:left;
 }
 
-.contacto p{
+.contacto p, .contacto h1 {
 	margin-left: 150px;
 }
 
-.cont_titulo{
-	font-size:24px;	
+.contacto h1 {
+	font-size:24px;
 }
 
-.cont_nota{
-	margin: 100px 50px 0 50px;
-	padding-bottom:50px;
+.contacto span {
+	padding: 30px 200px;
+	display: block;
 	text-align:justify;
 }
 
-.list_text{
-	margin-left:125px;	
+
+/* ..:: Detalhes ::..*/
+
+.detalhes {
+	background-color: #CCCCCC;
+	padding-bottom: 50px;
 }
 
-.list_text label{
-	font-size:16px;
+.detalhes p label {
+	width: 200px;
+	margin-left:50px;
 }
 
-.list_text div{
+.detalhes .list {
+	width: 450px;
+	padding: 1px 0;
+	margin: 50px;
+}
+
+.detalhes .list a {
+	padding: 10px 0;
+	height: 90px;
+}
+
+.detalhes .list p {
+	margin: 0;
+}
+
+.detalhes .right {
 	float:right;
-	width:200px;
+	margin:50px 50px 50px 0;
+}
+
+.detalhes .right p {
+	width:400px;	
+}
+
+.detalhes .extra {
+	margin-left:50px;	
+}
+
+.detalhes .extra p label{
+	margin-left:50px;	
+	width: 150px;
 }
 
 #sliderFrame{
 	padding-top:50px;
 	padding-bottom:50px;	
 }
-
-.detalhe_contac{
-	float:right;
-	margin:50px 50px 50px 0;	
-	height:50%;
-}
-
-.detalhe_contac p label{
-	margin-left:0;	
-}
-
-.detalhe_contac p{
-	width:400px;	
-}
-
-.detalhe_extra{
-	margin-left:50px;	
-}
-
-.detalhe_extra p label{
-	margin-left:50px;	
-	width: 150px;
-}
-
-.detalhe_aluguer{
-	margin:50px 0 150px 0;
-	width:40%;
-}
-
-
 
 

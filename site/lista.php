@@ -71,7 +71,7 @@
      </div>
 </div>
 
-<div class="right">
+<div class="right list">
 	<div class="head">Lista:</div>
-    <? require 'entradas.php'; ?>
+   	 <? require 'entradas.php'; ?>
 </div> 
