@@ -182,6 +182,10 @@
 					'€ a ' + 
 					this.formater(this.value[1]) + '€'
 				);
+				
+				min_value.value=this.value[0];
+				max_value.value=this.value[1];
+
 				this.tooltip[0].style[this.stylePos] = this.size * (this.percentage[0] + (this.percentage[1] - this.percentage[0])/2)/100 - (this.orientation === 'vertical' ? this.tooltip.outerHeight()/2 : this.tooltip.outerWidth()/2) +'px';
 			} else {
 				this.tooltipInner.text(
