@@ -10,96 +10,63 @@
     <div class="head">Pesquisa:</div>
 
     <div class="pesquisa">
-    	<form method="post">
-	        Tipo:
-	        <br>
-	        <div class="despesa">
-	            Quarto
-	            <input type="checkbox" name="quarto" class="opcao1" value="quarto">
-	            <br>
-	            Apartamento
-	            <input type="checkbox" name="apartamento" class="opcao1" value="apartamento">
-	            <br>
-	            República
-	            <input type="checkbox" name="republica" class="opcao1" value="republica">
-	            <br>
-	            Residência
-	            <input type="checkbox" name="residencia" class="opcao1" value="residencia">
-	            <br> 
+    	<form method="get">
+	        <div>
+	            <p>Quartos <input type="checkbox" name="quarto" value="1" checked></p>
+	            <p>Apartamentos <input type="checkbox" name="apartamento" value="1" checked></p>
+	            <p>Repúblicas <input type="checkbox" name="republica" value="1" checked></p>
+	            <p>Residências <input type="checkbox" name="residencia" value="1" checked></p>
 	        </div>
 	        
-	        Género: <br>
-	        <select name="genero" class="opcao" size="1">
-	          <option selected value="Indiferente"></option>
-	          <option value="Masculino">Masculino</option>
-	          <option value="Feminino">Feminino</option>
-	        </select>
-	        <br>
+	        <p>Género:
+		        <select name="genero" size="1">
+		          <option selected value="Any"></option>
+		          <option value="Masculino">Masculino</option>
+		          <option value="Feminino">Feminino</option>
+		        </select>
+	        </p>
 	        
-	        Localização: <br>
-	        <select name="localizacao" class="opcao" size="1">
-	          <option selected value="Indiferente"></option>
-	        </select>
-	        <br>
+	        <p>Localização:
+		        <select name="localizacao" size="1">
+		          <option selected value=""></option>
+		        </select>
+	        </p>
 	        
-	        Número mínimo de Meses: <br>
-	        <select name="meses" class="opcao" size="1">
-	          <option selected value="Indiferente"></option>
-	          <option value="1">1</option>
-	          <option value="3">3</option>
-	          <option value="6">6</option>
-	          <option value="12">12</option>
-	        </select>
-	        <br>
+	        <p>Número mínimo de Meses:
+		        <select name="meses" size="1">
+		          <option selected value="0"></option>
+		          <option value="1">1</option>
+		          <option value="3">3</option>
+		          <option value="6">6</option>
+		          <option value="12">12</option>
+		        </select>
+	        </p>
 	        
-	        Preço: 
 	        <br>
-	        <input type="text" class="slider">
-	        <input type="hidden" name="min_value" id="min_value" value="">
- 			<input type="hidden" name="max_value" id="max_value" value="">
+	        <p>Preço:
+	        	<input type="text" class="slider">
+	        	<input type="hidden" name="minValue" id="minValue" value="">
+ 				<input type="hidden" name="maxValue" id="maxValue" value="">
+ 			</p>
 
-	        Mobilado:
-	        <input type="checkbox" name="mobilado" class="opcao1" value="mobilado">
-	        <br>
+	        <p>Mobilado: <input type="checkbox" name="mobilado" value="1"></p>
+	        <p>Lavagem Roupa: <input type="checkbox" name="roupa" value="1"></p>
 	        
-	        Lavagem Roupa: 
-	        <input type="checkbox" name="roupa" class="opcao1" value="roupa">
-	        <br>
-	        
-	        Despesas Incluídas: 
-	        <br>
-	        <div class="despesa">
-	            Água
-	            <input type="checkbox" name="agua" class="opcao1" value="agua">
-	            <br>
-	            Luz
-	            <input type="checkbox" name="luz" class="opcao1" value="luz">
-	            <br>
-	            Gás
-	            <input type="checkbox" name="gas" class="opcao1" value="gas">
-	            <br>
-	            Internet
-	            <input type="checkbox" name="internet" class="opcao1" value="internet">
-	            <br> 
+	       	Despesas Incluídas:
+	        <div>
+	            <p>Água <input type="checkbox" name="agua" value="1"></p>
+	            <p>Luz <input type="checkbox" name="luz" value="1"></p>
+	            <p>Gás <input type="checkbox" name="gas" value="1"></p>
+	            <p>Internet <input type="checkbox" name="internet" value="1"></p>
 	        </div>
 	        
-	        Senhorio Residente: 
-	        <input type="checkbox" name="senhorio" class="opcao1" value="senhorio">
-	        <br>
-	        
-	        Visitas:
-	        <input type="checkbox" name="visitas" class="opcao1" value="visitas">
-	        <br>
-	        
-	        Animais:
-	        <input type="checkbox" name="animais" class="opcao1" value="animais">
-	        <br><br>
+	        <p>Sem Senhorio Residente: <input type="checkbox" name="senhorio" value="1"></p>
+	        <p>Visitas: <input type="checkbox" name="visitas" value="1"></p>
+	        <p>Animais: <input type="checkbox" name="animais" value="1"></p>
 	        
 	        <center>
 	        	<input type="submit" value="Pesquisar" class="btn btn-primary btn-lg">
 	        </center>
-	        
-	        <br>
         </form>
      </div>
 </div>
