@@ -87,8 +87,8 @@ a, a:hover, a:focus{
 	margin: 15px 78px;
 }
 
-#conteudo >.left, >.right {
-	margin-bottom: 20px;
+#conteudo >.left, #conteudo >.right {
+	margin-bottom: 25px;
 }
 
 #conteudo >.left {
@@ -187,6 +187,10 @@ a, a:hover, a:focus{
 .list span {
 	float:right;
 	margin-right: 10px;
+}
+
+.list center {
+	padding: 25px;
 }
 
 

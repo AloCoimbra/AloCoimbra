@@ -8,8 +8,8 @@ ErrorDocument 404 /404
 # Statics
 RewriteRule ^$ lista
 RewriteRule ^admin/? - [L]
+RewriteRule ^entradas/ entradas.php [L]
 
 # Dynamics
 RewriteRule ^(lista|mapa|contactos)/?$ main.php?page=$1 [L]
 RewriteRule ^detalhes/(\d+)/?$ main.php?page=detalhes&id=$1 [L]
-RewriteRule ^entradas/(\d+)/?$ entradas.php?set=$1 [L]

@@ -1,26 +1,43 @@
 $(document).ready(function() {
-	$('.tooool').tooltip();
-    $('.slider').slider({
-        min: 0,
-        max: 2000,
-        step: 5,
-        value: [200,750]
+    var min = post['MinPreco'];
+    var max = post['MaxPreco'];
+
+    $('input, select').each(function(i, input) {
+        var v = post[input.name];
+
+        if (v) {
+            input.value = v;
+            input.checked = v;
+        }
     });
 
-    canQuery = true;
-    set = 0;
+    $('.tooool').tooltip();
+    $('.slider').slider({
+        value: [min ? min:150, max ? max:750],
+        max: 2000,
+        step: 5,
+        min: 0,
+    });
+
+    var set = 0;
+    var canQuery = true;
+    var values = $('form').serialize();
 
     window.onscroll = function(e) {
-        console.log("yo");
-        console.log($(window).scrollTop() + $(window).height(),  $(document).height());
     	if (canQuery && $(window).scrollTop() + $(window).height() + 80 >= $(document).height()) {
             canQuery = false;
             set++;
 
-        	$.ajax('/entradas/' + set).done(function(data) {
-			  	$('.list').append(data);
-                canQuery = data != '';
-			});
-    	}
+            $.ajax({
+                type: 'POST',
+                url: '/entradas/',
+                data: 'Set=' + set + '&' + values,
+                
+                success: function(data) {
+                    $('.list').append(data);
+                    canQuery = data != '';
+                 }
+            });
+        }
 	};
 });
