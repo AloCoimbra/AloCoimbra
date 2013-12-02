@@ -6,10 +6,10 @@
     <div class="pesquisa">
     	<form method="post">
 	        <div>
-	            <p>Quartos <input type="checkbox" name="Quarto" value="1" checked></p>
-	            <p>Apartamentos <input type="checkbox" name="Apartamento" value="1" checked></p>
-	            <p>Repúblicas <input type="checkbox" name="Republica" value="1" checked></p>
-	            <p>Residências <input type="checkbox" name="Residencia" value="1" checked></p>
+	            <p>Quartos <input type="checkbox" name="Quarto" value="1"></p>
+	            <p>Apartamentos <input type="checkbox" name="Apartamento" value="1"></p>
+	            <p>Repúblicas <input type="checkbox" name="Republica" value="1"></p>
+	            <p>Residências <input type="checkbox" name="Residencia" value="1"></p>
 	        </div>
 	        
 	        <p>Género:
