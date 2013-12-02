@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 25, 2013 at 01:51 PM
+-- Generation Time: Dec 02, 2013 at 02:15 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
@@ -12,6 +12,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `alocoimbra`
 --
+CREATE DATABASE `alocoimbra` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `alocoimbra`;
 
 -- --------------------------------------------------------
 
@@ -95,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `entradas` (
 ,`Tipo` set('Apartamento','Quarto','Residencia','Republica')
 ,`Visita` date
 ,`Pagamento` date
+,`Imagem Capa` int(11)
 ,`Qualidade` decimal(7,0)
 ,`MinPreco` bigint(20)
 ,`MaxPreco` bigint(20)
@@ -186,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `ordens` (
 -- Dumping data for table `ordens`
 --
 
-INSERT INTO `ordens` VALUES(1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', '', 2000, 16, 0, 'Masculino', 3, 2, 2, 2, '', 'Quarto', '2013-08-29', '2013-08-29');
+INSERT INTO `ordens` VALUES(1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', '', 2000, 16, 0, 'Masculino', 3, 0, 0, 0, '', 'Quarto', '2013-08-29', '2013-08-29');
 INSERT INTO `ordens` VALUES(2, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, '', 'Rua António José de Almeida, 65 - R/C ', 'D3', 'Adília dos Santos Sousa', '239 828 611;963 535 340', '', 2000, 4, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-03', '2013-08-30');
 INSERT INTO `ordens` VALUES(3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Limpeza', 'Avenida Sá da Bandeira, 110 - 1º', 'D4', 'Maria Luísa Baptista Mendes Gouveia', '239 717 303; 91 484 50 50', '', 2000, 4, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-07', '2013-09-17');
 INSERT INTO `ordens` VALUES(4, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 'Limpeza', 'Rua do Brasil, 302 - 6º dtº (Calhabé)', 'E6', 'Maria da Glória Bernardo', '239 492 085; 911 990 548', '', 2000, 3, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-08-22', '2013-08-22');
@@ -570,4 +573,4 @@ INSERT INTO `zonas` VALUES('H8', '00FF00');
 --
 DROP TABLE IF EXISTS `entradas`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `entradas` AS select `o`.`ID` AS `ID`,`o`.`Visivel` AS `Visivel`,`o`.`Certificacao` AS `Certificacao`,`o`.`Senhorio` AS `Senhorio`,`o`.`Lavagem_roupa` AS `Lavagem_roupa`,`o`.`Mobilado` AS `Mobilado`,`o`.`Animais` AS `Animais`,`o`.`Visitas` AS `Visitas`,`o`.`Agua` AS `Agua`,`o`.`Luz` AS `Luz`,`o`.`Gas` AS `Gas`,`o`.`Internet` AS `Internet`,`o`.`Outras_despesas` AS `Outras_despesas`,`o`.`Morada` AS `Morada`,`o`.`Zona` AS `Zona`,`o`.`Proprietario` AS `Proprietario`,`o`.`Contacto` AS `Contacto`,`o`.`Email` AS `Email`,`o`.`Inscricao_ano` AS `Inscricao_ano`,`o`.`Numero_pessoas` AS `Numero_pessoas`,`o`.`Min_meses` AS `Min_meses`,`o`.`Sexo` AS `Sexo`,`o`.`Cozinha` AS `Cozinha`,`o`.`Casa_de_banho` AS `Casa_de_banho`,`o`.`Dimensoes` AS `Dimensoes`,`o`.`Estado_casa` AS `Estado_casa`,`o`.`Avaliador` AS `Avaliador`,`o`.`Tipo` AS `Tipo`,`o`.`Visita` AS `Visita`,`o`.`Pagamento` AS `Pagamento`,round(((((((`o`.`Cozinha` + `o`.`Casa_de_banho`) + `o`.`Dimensoes`) + `o`.`Estado_casa`) + (select avg(`aluguers`.`Qualidade`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`))) + 0.5) / 5),0) AS `Qualidade`,(select min(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MinPreco`,(select max(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MaxPreco` from `ordens` `o`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `entradas` AS select `o`.`ID` AS `ID`,`o`.`Visivel` AS `Visivel`,`o`.`Certificacao` AS `Certificacao`,`o`.`Senhorio` AS `Senhorio`,`o`.`Lavagem_roupa` AS `Lavagem_roupa`,`o`.`Mobilado` AS `Mobilado`,`o`.`Animais` AS `Animais`,`o`.`Visitas` AS `Visitas`,`o`.`Agua` AS `Agua`,`o`.`Luz` AS `Luz`,`o`.`Gas` AS `Gas`,`o`.`Internet` AS `Internet`,`o`.`Outras_despesas` AS `Outras_despesas`,`o`.`Morada` AS `Morada`,`o`.`Zona` AS `Zona`,`o`.`Proprietario` AS `Proprietario`,`o`.`Contacto` AS `Contacto`,`o`.`Email` AS `Email`,`o`.`Inscricao_ano` AS `Inscricao_ano`,`o`.`Numero_pessoas` AS `Numero_pessoas`,`o`.`Min_meses` AS `Min_meses`,`o`.`Sexo` AS `Sexo`,`o`.`Cozinha` AS `Cozinha`,`o`.`Casa_de_banho` AS `Casa_de_banho`,`o`.`Dimensoes` AS `Dimensoes`,`o`.`Estado_casa` AS `Estado_casa`,`o`.`Avaliador` AS `Avaliador`,`o`.`Tipo` AS `Tipo`,`o`.`Visita` AS `Visita`,`o`.`Pagamento` AS `Pagamento`,`i`.`ID` AS `Imagem Capa`,round(((((((`o`.`Cozinha` + `o`.`Casa_de_banho`) + `o`.`Dimensoes`) + `o`.`Estado_casa`) + (select avg(`aluguers`.`Qualidade`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`))) + 0.5) / 5),0) AS `Qualidade`,(select min(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MinPreco`,(select max(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MaxPreco` from (`ordens` `o` left join `imagens` `i` on((`i`.`Ordem` = `o`.`ID`))) group by `o`.`ID`;

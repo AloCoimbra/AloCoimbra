@@ -246,7 +246,7 @@ a, a:hover, a:focus{
 
 .detalhes {
 	background-color: #CCCCCC;
-	padding-bottom: 50px;
+	padding: 1px 0 25px 0;
 }
 
 .detalhes p label {

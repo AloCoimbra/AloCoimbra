@@ -54,7 +54,7 @@
     } else {
     	foreach ($results as $entrada) { ?>
             <a href="/detalhes/<?=$entrada['ID'] + 1?>">
-                <img src="<?=LoadImage('/images/', 'Filler1.jpg', 100, 100)?>">
+                <img src="<?= $entrada['Imagem Capa'] ? LoadImage('/images/', $entrada['Imagem Capa'], 100, 100) : '/images/Filler.png' ?>">
                 <div>
                 	<span><?= qualidade($entrada['Qualidade']) ?></span>
                     <h1><?= $entrada['Tipo'] ?></h1>

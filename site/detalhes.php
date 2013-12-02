@@ -3,25 +3,28 @@
     require 'database.php';
 
 	$id = @((int) $_GET['id']) - 1;
-	$results = $ordens->Find('*', 'WHERE id=' . $id);
+	$entries = $ordens->Find('*', 'WHERE id=' . $id);
 
-	if (count($results) == 0)
+	if (count($entries) == 0)
 		include '404.html';
 	else {
 		$ordem = $results[0];
+		$images = $imagens->Find('id', 'WHERE ordem=' . $id);
 ?>
 
 <link href="/css/image-slider.css" rel="stylesheet" type="text/css"/>
 <script src="/js/image-slider.js" type="text/javascript"></script>
 
 <div class="detalhes">
-	<div id="sliderFrame">
-	    <div id="slider">
-	        <img src="/images/Filler1.jpg" />
-	        <img src="/images/Filler2.jpg" />
-	        <img src="/images/Filler3.jpg" />
-	    </div>
-	</div>
+	<? if (count($images) > 0) { ?>
+		<div id="sliderFrame">
+		    <div id="slider">
+		    	<? foreach ($images as $image) { ?>
+		    		<img src="<?=LoadImage('/images/', $image['id'], 700, 306)?>"/>
+		    	<? } ?>
+		    </div>
+		</div>
+	<? } ?>
 
 	<div class="right">
         <p><label>Géneros Aceites:</label>
@@ -47,10 +50,8 @@
 		<? } ?>
 	</div>
 
-	<? if ($ordem['Min_meses'] > 0) { ?>
-		<p><label>Numero mínimo de meses:</label>
-		<?= $ordem['Min_meses']?></p>
-	<?}?>
+	<p><label>Numero mínimo de meses:</label>
+	<?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
 
 	<p><label>Capacidade total:</label>
 	<?= $ordem['Numero_pessoas']?></p>
