@@ -8,7 +8,7 @@
 	if (count($entries) == 0)
 		include '404.html';
 	else {
-		$ordem = $results[0];
+		$ordem = $entries[0];
 		$images = $imagens->Find('id', 'WHERE ordem=' . $id);
 ?>
 
@@ -27,17 +27,10 @@
 	<? } ?>
 
 	<div class="right">
-        <p><label>Géneros Aceites:</label>
-        <?= $ordem['Sexo'] ?></p>
-
-        <p><label>Alojamento:</label>
-        <?= $ordem['Tipo']?></p>
-
-        <p><label>Zona:</label>
-        <?= $ordem['Zona']?></p>
-
-        <p><label> Morada:</label>
-        <?= $ordem['Morada']?></p>
+        <p><label>Géneros Aceites:</label> <?= $ordem['Sexo'] ?></p>
+        <p><label>Alojamento:</label> <?= $ordem['Tipo']?></p>
+        <p><label>Zona:</label> <?= $ordem['Zona']?></p>
+        <p><label> Morada:</label> <?= $ordem['Morada']?></p>
     </div>
 
     <div class="list">
@@ -50,18 +43,6 @@
 		<? } ?>
 	</div>
 
-	<p><label>Numero mínimo de meses:</label>
-	<?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
-
-	<p><label>Capacidade total:</label>
-	<?= $ordem['Numero_pessoas']?></p>
-
-	<p><label>Mobilado:</label>
-	<?= toggle($ordem['Mobilado'])?></p>
-
-	<p><label>Senhorio Residente:</label>
-	<?= toggle($ordem['Senhorio'])?></p>
-
 	<div class="right">
         <p><label>Contacto:</label> </p>
 	    <p><?= $ordem['Proprietario']?></p>
@@ -69,10 +50,18 @@
 	    <p><?= $ordem['Email']?></p>
     </div>
 
-	<p><label>Máquina de Lavar Roupa:</label>
-	<?= toggle($ordem['Lavagem_roupa'])?></p>
+	<p><label>Numero Mínimo de Meses:</label> <?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
+	<p><label>Capacidade Total:</label> <?= $ordem['Numero_pessoas'] ?></p>
 
-	<p><label>Inclui Outras despesas:</label></p>
+	<p><label>Dimensões:</label> <?= qualidade($ordem['Dimensoes']) ?></p>
+	<p><label>Estado da Casa:</label> <?= qualidade($ordem['Estado_casa']) ?></p>
+	<p><label>Qualidade Casa de Banho:</label> <?= qualidade($ordem['Casa_de_banho']) ?></p>
+
+	<p><label>Mobilado:</label> <?= toggle($ordem['Mobilado'])?></p>
+	<p><label>Senhorio Residente:</label> <?= toggle($ordem['Senhorio'])?></p>
+	<p><label>Máquina de Lavar Roupa:</label> <?= toggle($ordem['Lavagem_roupa'])?></p>
+
+	<p><label>Inclui Outras Despesas:</label></p>
 	<div class="extra">
 		<p><label> Agua: </label> <?=toggle($ordem['Agua'])?></p>
 		<p><label> Luz: </label> <?=toggle($ordem['Luz'])?></p>
