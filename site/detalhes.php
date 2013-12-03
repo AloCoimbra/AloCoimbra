@@ -10,6 +10,10 @@
 	else {
 		$ordem = $entries[0];
 		$images = $imagens->Find('id', 'WHERE ordem=' . $id);
+
+		function toggle($v) { 
+			return $v == 1 ? "Sim" : "Não";
+		}
 ?>
 
 <link href="/css/image-slider.css" rel="stylesheet" type="text/css"/>

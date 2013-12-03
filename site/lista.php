@@ -23,6 +23,10 @@
 	        <p>Localização:
 		        <select name="Zona" size="1">
 		          <option selected value=""></option>
+
+		          <? foreach ($zonas->Find('nome', '') as $zona) { ?>
+		          	 <option value="<?= $zona['nome'] ?>"><?= $zona['nome'] ?></option>
+		          <? } ?>
 		        </select>
 	        </p>
 	        

@@ -1,6 +1,6 @@
 <div class="contacto">
     <div>
-        <img src="/images/Logo.png" alt="AloCoimbra">
+        <img src="/images/Filler.png" alt="AloCoimbra">
         <h1>A nossa equipa</h1>
         <p><a target="_blank" href="https://www.facebook.com/AloCoimbra">www.facebook.com/AloCoimbra</a></p>
     </div>

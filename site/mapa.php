@@ -1,7 +1,4 @@
-<?
-  require 'lib/QuickSQL.php';
-  new QuickSQL('alocoimbra', 'root', 'root');
-?>
+<?  require 'database.php'; ?>
 
 <div class="full">
 	<div class="head">Mapa:</div>

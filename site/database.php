@@ -12,8 +12,4 @@
     	else
     		return "Razoável";
 	}
-
-	function toggle($v) { 
-		return $v == 1 ? "Sim" : "Não";
-	}
 ?>
