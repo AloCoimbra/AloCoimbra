@@ -197,7 +197,7 @@ a, a:hover, a:focus{
 /* ..:: Map ::..*/
 #map {
 	width: 979px;
-	height: 979px;
+	height: 700px;
 }
 
 #map .label {
