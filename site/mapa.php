@@ -25,7 +25,7 @@
     });
   }
 
-  function addZone(map, name, coords) {
+  function addZone(map, name, color, coords) {
      var points = [];
      var avLat = 0, avLng = 0;
 
@@ -36,11 +36,11 @@
      }
 
      new google.maps.Polygon({
-        strokeColor: '#069',
-        fillColor: '#069',
+        strokeColor: color,
+        fillColor: color,
         strokeOpacity: 0.4,
         strokeWeight: 2,
-        fillOpacity: 0.1,
+        fillOpacity: 0.2,
         paths: points,
         map: map
       });
@@ -50,7 +50,7 @@
         position: new google.maps.LatLng(avLat / coords.length, avLng / coords.length),
         map: map,
         fontSize: 10,
-        fontColor: '#069',
+        fontColor: color,
         align: 'center'
       });
   }
@@ -67,7 +67,7 @@
     <? }
       
       foreach ($zonas->Find('*', '') as $zona) {
-        echo 'addZone(map,"' . $zona['Nome'] . '",[';
+        echo 'addZone(map,"' . $zona['Nome'] . '","#' . $zona['Cor'] . '",[';
 
         foreach ($pontoszonas->Find('*', 'WHERE Nome="' . $zona['Nome'] . '"') as $spot)
           echo '[' . $spot['Latitude'] . ',' . $spot['Longitude'] . '],';
