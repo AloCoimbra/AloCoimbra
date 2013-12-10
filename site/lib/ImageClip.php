@@ -17,7 +17,6 @@
 		$result = $dir . "{$width}x{$height}/" . $name;
 
 		if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $result)) {
-			echo "PILLAS!";
 			$file = new ImageResizer($dir . $name);
 			$file->cropSize($width, $height);
 			$file->save($result);
