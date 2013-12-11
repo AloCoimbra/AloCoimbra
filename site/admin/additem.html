@@ -184,7 +184,7 @@
             </div>
         </div>
 
-        <div class="menu">
+        <div class="menu" id="menu">
             <div class="right">
                 <p>
                     <select name="tipo" size="1">
@@ -208,18 +208,26 @@
                 <p>Preço: </p>
             </div>
             <center>
-                <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer();'>
+                <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(0);'>
             </center>
         </div>
 
         <SCRIPT TYPE="text/javascript">
-            function addAluguer() {
-				document.getElementById("addButton").remove(0);
-				
-                var div = document.createElement('div');
-                div.setAttribute('class', 'menu');
-				div.innerHTML = "<div class=\"right\"><p><select name=\"tipo\" size=\"1\"><option selected value=\"Individual\">Individual</option><option value=\"Duplo\">Duplo</option></select></p><p><select name=\"qualidade\" size=\"1\"><option selected value=\"0\">Razoável</option><option value=\"1\">Bom</option><option value=\"2\">Muito Bom</option><option value=\"3\">Excelente</option></select></p><p><input type=\"number\" name=\"preco\" value=\"150\" min=\"0\" step=\"1\" class=\"numberinput\"></p></div><div class=\"left\"><p>Tipo: </p><p>Qualidade: </p><p>Preço: </p></div><center><input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer();'></center>";
-                document.body.appendChild(div);
+            var cont = 1; 
+
+            function addAluguer(aux) {
+                if(aux==0) aux='';
+                if(document.getElementById("addButton"+aux).value === 'Adicionar outro'){
+                    var div = document.createElement('div');
+                    div.setAttribute('class', 'menu');
+                    div.setAttribute('id','menu'+cont);
+    				div.innerHTML = "<div class=\"right\"><p><select name=\"tipo"+cont+"\" size=\"1\"><option selected value=\"Individual\">Individual</option><option value=\"Duplo\">Duplo</option></select></p><p><select name=\"qualidade"+cont+"\" size=\"1\"><option selected value=\"0\">Razoável</option><option value=\"1\">Bom</option><option value=\"2\">Muito Bom</option><option value=\"3\">Excelente</option></select></p><p><input type=\"number\" name=\"preco"+cont+"\" value=\"150\" min=\"0\" step=\"1\" class=\"numberinput\"></p></div><div class=\"left\"><p>Tipo: </p><p>Qualidade: </p><p>Preço: </p></div><center><input type='button' id='addButton"+cont+"' value='Adicionar outro' onclick='addAluguer("+cont+");'></center>";
+                    document.body.appendChild(div);
+                    document.getElementById("addButton"+aux).value = 'Remover';
+                    cont++;
+                }
+                else if(confirm("Tem certeza que deseja remover este registo?"))
+                    document.getElementById("menu"+aux).remove(0);
             }
 			
 			$(document).ready(function () {
