@@ -3,3 +3,33 @@
 	margin-left:auto;
 	margin-right:auto;	
 }
+
+.menu{
+	width: 60%;
+	margin: 30px auto 30px auto;
+	background: #999;
+	border: 2px solid #000;
+	font-weight:bold;
+}
+
+.menu p{
+	margin-left: 25px;
+	height: 26px;
+}
+
+.menu .right p input, .menu .right p select{
+	width: 95%;
+}
+
+.menu .left{
+	width: 30%;
+}
+
+.menu .right{
+	float:right;
+	width:70%;
+}
+
+.left .subtema{
+	margin-left: 50px;
+}
