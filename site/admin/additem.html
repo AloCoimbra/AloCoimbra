@@ -16,201 +16,220 @@
         </script>
     </head>
     <body>
-        <div class="menu">
-            <div class="right">
-                <p><input type="text" name="morada"></p>
-                <p><input type="text" name="zona"></p>
-                <p>
-                   <select name="cetificacao" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="pontuacao" size="1">
-                        <option selected value="0">Razoável</option>
-                        <option value="1">Bom</option>
-                        <option value="2">Muito Bom</option>
-                        <option value="3">Excelente</option>
-                    </select>
-                </p>
-                <p>
-                    <input type="text" class="data" name="inscrisao" readonly>
-                </p>
-                <p>
-                    <input type="text" class="data" name="ultima_visita" readonly>
-                </p>
-                <p>
-                    <input type="text" class="data" name="ultimo_pagamento" readonly>
-                </p>
-                <p><input type="text" name="avaliador"></p>
-            </div>
-            <div class="left">
-                <p>Morada: </p>
-                <p>Zona: </p>
-                <p>Certificação: </p>
-                <p>Pontuação: </p>
-                <p>1ª Inscrição - Ano: </p>
-                <p>Data da última visita: </p>
-                <p>Data do último pagamento: </p>
-                <p>Avaliador: </p>
-            </div>
-        </div>
-
-        <div class="menu">
-            <div class="right">
-                <p><input type="text" name="proprietario"></p>
-                <p><input type="text" name="contacto"></p>
-                <p><input type="text" name="mail"></p>
-            </div>
-            <div class="left">
-                <p>Proprietario: </p>
-                <p>Contacto: </p>
-                <p>E-Mail: </p>
-            </div>
-        </div>
-
-        <div class="menu">
-            <div class="right">
-                <p>
-                    <select name="alojamento" size="1">
-                        <option selected value="Quarto">Quarto</option>
-                        <option value="Apartamento">Apartamento</option>
-                        <option value="Residencia">Residência</option>
-                        <option value="Republica">Républica</option>
-                    </select>
-                </p>
-                <p>
-                    <select name="sexo" size="1">
-                        <option selected value="Ambos">Ambos</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                    </select>
-                </p>
-                <p><input type="text" name="minimo_meses"></p>
-                <p>
-                    <select name="cozinha" size="1">
-                        <option selected value="0">Razoável</option>
-                        <option value="1">Bom</option>
-                        <option value="2">Muito Bom</option>
-                        <option value="3">Excelente</option>
-                    </select>
-                </p>
-                <p>
-                    <select name="wc" size="1">
-                        <option selected value="0">Razoável</option>
-                        <option value="1">Bom</option>
-                        <option value="2">Muito Bom</option>
-                        <option value="3">Excelente</option>
-                    </select>
-                </p>
-                <p>
-                    <select name="senhorio" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="roupa" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="mobilado" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p></p>
-                <p>
-                    <select name="agua" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="luz" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="gas" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p><input type="text" name="outras_despesas"></p>
-                <p></p>
-                <p>
-                    <select name="animais" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="visitas" size="1">
-                        <option selected value="0">Não</option>
-                        <option value="1">Sim</option>
-                    </select> 
-                </p>
-                <p>
-                    <input name="imagem" type="file" multiple accept='image/*'>
-                </p>  
-            </div>
-            <div class="left">
-                <p>Alojamento: </p>
-                <p>Género: </p>
-                <p>Nº mínimo de meses: </p>
-                <p>Cozinha: </p>
-                <p>Casa de Banho: </p>
-                <p>Senhorio Residente: </p>
-                <p>Lavagem de Roupa: </p>
-                <p>Mobilado: </p>
-                <p>Despesas: </p>
-                <div class="subtema">
-                    <p>Água: </p>
-                    <p>Luz: </p>
-                    <p>Gás: </p>
-                    <p>Outra(s): </p>
+        <!-- só para testes -->
+        <form action="additem.html" method="get">
+            <div class="menu">
+                <div class="right">
+                    <p><input type="text" name="morada"></p>
+                    <p><input type="text" name="zona"></p>
+                    <p>
+                       <select name="cetificacao" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="pontuacao" size="1">
+                            <option selected value="0">Razoável</option>
+                            <option value="1">Bom</option>
+                            <option value="2">Muito Bom</option>
+                            <option value="3">Excelente</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input type="text" class="data" name="inscrisao" readonly>
+                    </p>
+                    <p>
+                        <input type="text" class="data" name="ultima_visita" readonly>
+                    </p>
+                    <p>
+                        <input type="text" class="data" name="ultimo_pagamento" readonly>
+                    </p>
+                    <p><input type="text" name="avaliador"></p>
                 </div>
-                <p>Permite: </p>
-                <div class="subtema">
-                    <p>Animais: </p>
-                    <p>Visitas: </p>
+                <div class="left">
+                    <p>Morada: </p>
+                    <p>Zona: </p>
+                    <p>Certificação: </p>
+                    <p>Pontuação: </p>
+                    <p>1ª Inscrição - Ano: </p>
+                    <p>Data da última visita: </p>
+                    <p>Data do último pagamento: </p>
+                    <p>Avaliador: </p>
                 </div>
-                <p>Imagem: </p>
             </div>
-        </div>
 
-        <div class="menu" id="menu">
-            <div class="right">
-                <p>
-                    <select name="tipo" size="1">
-                        <option selected value="Individual">Individual</option>
-                        <option value="Duplo">Duplo</option>
-                    </select> 
-                </p>
-                <p>
-                    <select name="qualidade" size="1">
-                        <option selected value="0">Razoável</option>
-                        <option value="1">Bom</option>
-                        <option value="2">Muito Bom</option>
-                        <option value="3">Excelente</option>
-                    </select>
-                </p>
-                <p><input type="number" name="preco" value="150" min="0" step="1" class="numberinput"></p>
+            <div class="menu">
+                <div class="right">
+                    <p><input type="text" name="proprietario"></p>
+                    <p><input type="text" name="contacto"></p>
+                    <p><input type="text" name="mail"></p>
+                </div>
+                <div class="left">
+                    <p>Proprietario: </p>
+                    <p>Contacto: </p>
+                    <p>E-Mail: </p>
+                </div>
             </div>
-            <div class="left">
-                <p>Tipo: </p>
-                <p>Qualidade: </p>
-                <p>Preço: </p>
+
+            <div class="menu">
+                <div class="right">
+                    <p>
+                        <select name="alojamento" size="1">
+                            <option selected value="Quarto">Quarto</option>
+                            <option value="Apartamento">Apartamento</option>
+                            <option value="Residencia">Residência</option>
+                            <option value="Republica">Républica</option>
+                        </select>
+                    </p>
+                    <p>
+                        <select name="sexo" size="1">
+                            <option selected value="Ambos">Ambos</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                    </p>
+                    <p><input type="text" name="minimo_meses"></p>
+                    <p>
+                        <select name="cozinha" size="1">
+                            <option selected value="0">Razoável</option>
+                            <option value="1">Bom</option>
+                            <option value="2">Muito Bom</option>
+                            <option value="3">Excelente</option>
+                        </select>
+                    </p>
+                    <p>
+                        <select name="wc" size="1">
+                            <option selected value="0">Razoável</option>
+                            <option value="1">Bom</option>
+                            <option value="2">Muito Bom</option>
+                            <option value="3">Excelente</option>
+                        </select>
+                    </p>
+                    <p>
+                        <select name="senhorio" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="roupa" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="mobilado" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p></p>
+                    <p>
+                        <select name="agua" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="luz" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="gas" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p><input type="text" name="outras_despesas"></p>
+                    <p></p>
+                    <p>
+                        <select name="animais" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="visitas" size="1">
+                            <option selected value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <input name="imagem" type="file" multiple accept='image/*'>
+                    </p>  
+                    <p></p>
+                    <p><input type="checkbox" name="imagem1" value="1"></p>
+                    <p><input type="checkbox" name="imagem2" value="1"></p>
+                </div>
+                <div class="left">
+                    <p>Alojamento: </p>
+                    <p>Género: </p>
+                    <p>Nº mínimo de meses: </p>
+                    <p>Cozinha: </p>
+                    <p>Casa de Banho: </p>
+                    <p>Senhorio Residente: </p>
+                    <p>Lavagem de Roupa: </p>
+                    <p>Mobilado: </p>
+                    <p>Despesas: </p>
+                    <div class="subtema">
+                        <p>Água: </p>
+                        <p>Luz: </p>
+                        <p>Gás: </p>
+                        <p>Outra(s): </p>
+                    </div>
+                    <p>Permite: </p>
+                    <div class="subtema">
+                        <p>Animais: </p>
+                        <p>Visitas: </p>
+                    </div>
+                    <p>Imagem: </p>
+
+                    <!-- para editar -->
+                    <p>Apagar Imagens: </p>
+                    <div class="subtema">
+                        <p>Imagem1 </p>
+                        <p>Imagem2 </p>
+                    </div>
+                </div>
             </div>
-            <center>
-                <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(0);'>
-            </center>
-        </div>
+
+            <div class="menu" id="menu">
+                <div class="right">
+                    <p>
+                        <select name="tipo" size="1">
+                            <option selected value="Individual">Individual</option>
+                            <option value="Duplo">Duplo</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <select name="qualidade" size="1">
+                            <option selected value="0">Razoável</option>
+                            <option value="1">Bom</option>
+                            <option value="2">Muito Bom</option>
+                            <option value="3">Excelente</option>
+                        </select>
+                    </p>
+                    <p><input type="number" name="preco" value="150" min="0" step="1" onkeypress="return isNumberKey(event)"></p>
+                </div>
+                <div class="left">
+                    <p>Tipo: </p>
+                    <p>Qualidade: </p>
+                    <p>Preço: </p>
+                </div>
+                <center>
+                    <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(0);'>
+                </center>
+            </div>
+
+            <div class="menu" id="men_sub">
+                <center>
+                    <input type='submit' id='submete' value='Submeter'> 
+                </center>
+            </div>
+        </form>
 
         <SCRIPT TYPE="text/javascript">
             var cont = 1; 
@@ -221,47 +240,22 @@
                     var div = document.createElement('div');
                     div.setAttribute('class', 'menu');
                     div.setAttribute('id','menu'+cont);
-    				div.innerHTML = "<div class=\"right\"><p><select name=\"tipo"+cont+"\" size=\"1\"><option selected value=\"Individual\">Individual</option><option value=\"Duplo\">Duplo</option></select></p><p><select name=\"qualidade"+cont+"\" size=\"1\"><option selected value=\"0\">Razoável</option><option value=\"1\">Bom</option><option value=\"2\">Muito Bom</option><option value=\"3\">Excelente</option></select></p><p><input type=\"number\" name=\"preco"+cont+"\" value=\"150\" min=\"0\" step=\"1\" class=\"numberinput\"></p></div><div class=\"left\"><p>Tipo: </p><p>Qualidade: </p><p>Preço: </p></div><center><input type='button' id='addButton"+cont+"' value='Adicionar outro' onclick='addAluguer("+cont+");'></center>";
-                    document.body.appendChild(div);
+    				div.innerHTML = "<div class=\"right\"><p><select name=\"tipo"+cont+"\" size=\"1\"><option selected value=\"Individual\">Individual</option><option value=\"Duplo\">Duplo</option></select></p><p><select name=\"qualidade"+cont+"\" size=\"1\"><option selected value=\"0\">Razoável</option><option value=\"1\">Bom</option><option value=\"2\">Muito Bom</option><option value=\"3\">Excelente</option></select></p><p><input type=\"number\" name=\"preco"+cont+"\" value=\"150\" min=\"0\" step=\"1\" onkeypress=\"return isNumberKey(event)\"></p></div><div class=\"left\"><p>Tipo: </p><p>Qualidade: </p><p>Preço: </p></div><center><input type='button' id='addButton"+cont+"' value='Adicionar outro' onclick='addAluguer("+cont+");'></center>";
+                    var element = document.getElementById('men_sub');
                     document.getElementById("addButton"+aux).value = 'Remover';
+                    element.parentNode.insertBefore(div, element);
                     cont++;
                 }
                 else if(confirm("Tem certeza que deseja remover este registo?"))
                     document.getElementById("menu"+aux).remove(0);
             }
 			
-			$(document).ready(function () {
-				$(".numberinput").forceNumeric();
-			});
-	
-	
-			// forceNumeric() plug-in implementation
-			jQuery.fn.forceNumeric = function () {
-	
-				return this.each(function () {
-					$(this).keydown(function (e) {
-						var key = e.which || e.keyCode;
-	
-						if (!e.shiftKey && !e.altKey && !e.ctrlKey &&
-						// numbers   
-							 key >= 48 && key <= 57 ||
-						// Numeric keypad
-							 key >= 96 && key <= 105 ||
-						// Backspace and Tab and Enter
-							key == 8 || key == 13 ||
-						// Home and End
-							key == 35 || key == 36 ||
-						// left and right arrows
-							key == 37 || key == 39 ||
-						// Del and Ins
-							key == 46 || key == 45 ||
-						// F5 and Alt and F4
-							key == 116 || key == 115)
-							return true;
-						return false;
-					});
-				});
-			}
+            function isNumberKey(evt){
+                var charCode = (evt.which) ? evt.which : event.keyCode
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+                return true;
+            }
         </SCRIPT>
     </body>
 </html>
