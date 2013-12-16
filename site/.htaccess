@@ -7,10 +7,12 @@ ErrorDocument 404 /404
 
 # Statics
 RewriteRule ^$ lista
-RewriteRule ^admin/?$ - [L]
-RewriteRule ^admin/form$ /admin/form.php [L]
 RewriteRule ^entradas/ entradas.php [L]
 
 # Dynamics
 RewriteRule ^(lista|mapa|contactos)/?$ main.php?page=$1 [L]
 RewriteRule ^detalhes/(\d+)/?$ main.php?page=detalhes&id=$1 [L]
+
+# Admin
+RewriteRule ^admin/?$ /admin/main.php?page=lista [L]
+RewriteRule ^admin/editar/(\d+)/?$ /admin/main.php?page=editar&id=$1 [L]

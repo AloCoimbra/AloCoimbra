@@ -11,10 +11,12 @@
         <link href="/css/admin.css" rel="stylesheet" type="text/css" />
 
         <script>
+            var selection = '';
+
             $(function() {
                $("#selectable" ).selectable({
                    selected: function(event, ui) {
-                        document.getElementById("orderNumber").value = $('#selectable .ui-selected').attr('id');
+                        selection = $('#selectable .ui-selected').attr('id');
                         $('#edit').prop('disabled', false);
                    }
                 });
@@ -33,15 +35,11 @@
     <body>
         <div class="menu-lateral">
             <p>
-                <input type='button' id='add' value='Adicionar' onclick="window.location='form';"> 
+                <input type='button' id='add' value='Adicionar' onclick="window.location='editar';"> 
             </p>
-            <!-- só meti get para testar -->
-            <form action="form" method="get">
-                <p>
-                    <input type="hidden" name="id" id="orderNumber" value="0" />
-                    <input type='submit' id='edit' value='Editar' disabled> 
-                </p>
-            </form>
+            <p>
+                <input type='submit' id='edit' value='Editar' onclick="window.location='editar/' + selection;" disabled> 
+            </p>
         </div>
 
         <div class="lista">
