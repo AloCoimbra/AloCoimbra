@@ -2,8 +2,8 @@
     require '../database.php';
 
     $id = @((int) $_GET['id']) - 1;
-    $entries = $ordens->Find('*', 'WHERE id=' . $id);
-    $ordem = count($entries) == 1 ? $entries[0] : array();
+    $ordem = $ordens->Pull('*', 'WHERE id=' . $id);
+    $ordem = $ordem ? $ordem : array();
 
     $aluguers = $aluguers->Find('*', 'WHERE ordem=' . $id);
     $images = $imagens->Find('id', 'WHERE ordem=' . $id);

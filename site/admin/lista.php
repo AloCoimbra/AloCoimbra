@@ -35,7 +35,7 @@
     <body>
         <div class="menu-lateral">
             <p>
-                <input type='button' id='add' value='Adicionar' onclick="window.location='editar';"> 
+                <input type='button' id='add' value='Adicionar' onclick="window.location='adicionar';"> 
             </p>
             <p>
                 <input type='submit' id='edit' value='Editar' onclick="window.location='editar/' + selection;" disabled> 

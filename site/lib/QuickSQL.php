@@ -36,6 +36,19 @@
 		
 		
 		// Methods
+		function Count($cond = '') {
+			$result = $this->Pull('COUNT(*)', $cond);
+			return $result['COUNT(*)'];
+		}
+		
+		function Pull($fields, $cond) {
+			$result = $this->Select($fields, $cond);
+			$entry = mysql_fetch_assoc($result);
+			
+			mysql_free_result($result);
+			return $entry;
+		}
+
 		function Find($fields, $cond) {
 			$result = $this->Select($fields, $cond);
 			$array = array();
@@ -46,18 +59,16 @@
 			mysql_free_result($result);
 			return $array;
 		}
-		
-		function Pull($fields, $cond) {
-			$result = $this->Select($fields, $cond);
-			$entry = mysql_fetch_assoc($result);
-			
+
+		function Columns() {
+			$result = $this->Query("DESCRIBE $this->name");
+			$columns = array();
+
+			while ($column = mysql_fetch_assoc($result))
+				$columns[] = $column['Field'];
+
 			mysql_free_result($result);
-			return $entry;
-		}
-		
-		function Count($cond = '') {
-			$result = $this->Pull('COUNT(*)', $cond);
-			return $result['COUNT(*)'];
+			return $columns;
 		}
 		
 		function Insert($data) {
@@ -72,6 +83,8 @@
 			$fields = substr($fields, 0, -2);
 			$values = substr($values, 0, -2);
 			$this->Query("INSERT INTO $this->name ($fields) VALUES ($values)");
+
+			return mysql_insert_id();
 		}
 		
 		function Update($data, $cond) {

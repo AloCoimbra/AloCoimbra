@@ -3,12 +3,11 @@
     require 'database.php';
 
 	$id = @((int) $_GET['id']) - 1;
-	$entries = $ordens->Find('*', 'WHERE id=' . $id);
+	$ordem = $ordens->Pull('*', 'WHERE id=' . $id);
 
-	if (count($entries) == 0)
+	if (!$ordem)
 		include '404.html';
 	else {
-		$ordem = $entries[0];
 		$images = $imagens->Find('id', 'WHERE ordem=' . $id);
 
 		function toggle($v) { 
