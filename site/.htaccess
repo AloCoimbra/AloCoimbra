@@ -7,7 +7,8 @@ ErrorDocument 404 /404
 
 # Statics
 RewriteRule ^$ lista
-RewriteRule ^admin/? - [L]
+RewriteRule ^admin/?$ - [L]
+RewriteRule ^admin/form$ /admin/form.php [L]
 RewriteRule ^entradas/ entradas.php [L]
 
 # Dynamics

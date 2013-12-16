@@ -1,10 +1,10 @@
-function updateForm(data) {
+$(function() {
 	$('input, select').each(function(i, input) {
-        var v = data[input.name];
+        var v = formData[input.name];
 
         if (v) {
             input.value = v;
             input.checked = v;
         }
     });
- }
+ })

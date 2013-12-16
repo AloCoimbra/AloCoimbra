@@ -75,10 +75,11 @@
 </div> 
 
 <script type="text/javascript">
-	var post = <?= json_encode($_POST); ?>;
+	var formData = <?= json_encode($_POST); ?>;
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery.js"><\/script>')</script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="/js/bootstrap.slider.js"></script>
+<script src="/js/forms.js"></script>
 <script src="/js/lista.js"></script>

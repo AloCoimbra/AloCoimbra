@@ -1,16 +1,7 @@
 $(document).ready(function() {
-    var min = post['MinPreco'];
-    var max = post['MaxPreco'];
-
-    $('input, select').each(function(i, input) {
-        var v = post[input.name];
-
-        if (v) {
-            input.value = v;
-            input.checked = v;
-        }
-    });
-
+    var min = formData['MinPreco'];
+    var max = formData['MaxPreco'];
+    
     $('.tooool').tooltip();
     $('.slider').slider({
         value: [min ? min:150, max ? max:750],
