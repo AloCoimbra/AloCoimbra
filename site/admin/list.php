@@ -33,10 +33,10 @@
     <body>
         <div class="menu-lateral">
             <p>
-                <input type='button' id='add' value='Adicionar' onclick="window.location='additem.html';"> 
+                <input type='button' id='add' value='Adicionar' onclick="window.location='form';"> 
             </p>
             <!-- só meti get para testar -->
-            <form action="additem.html" method="get">
+            <form action="form" method="get">
                 <p>
                     <input type="hidden" name="id" id="orderNumber" value="0" />
                     <input type='submit' id='edit' value='Editar' disabled> 
@@ -65,10 +65,10 @@
 
             <ol id="selectable">
                 <? foreach ($ordens->Find('*', '') as $ordem) { ?>
-                    <li class="ui-widget-content" id="<?= $ordem['ID'] ?>">
+                    <li class="ui-widget-content" id="<?= $ordem['ID'] + 1 ?>">
                         <table>
                             <tr>
-                                <td class="pri"> <?= $ordem['ID'] ?> </td>
+                                <td class="pri"> <?= $ordem['ID'] + 1 ?> </td>
                                 <td class="sec"> <?= $ordem['Morada'] ?> </td>
                                 <td class="ter"> <?= $ordem['Proprietario'] ?> </td>
                                 <td class="qua"> <?= $ordem['Contacto'] ?> </td>
