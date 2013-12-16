@@ -8,7 +8,7 @@
     $aluguers = $aluguers->Find('*', 'WHERE ordem=' . $id);
     $images = $imagens->Find('id', 'WHERE ordem=' . $id);
 
-    for ($i = 0; $i <= count($aluguers); $i++)
+    for ($i = 0; $i < count($aluguers); $i++)
         foreach ($aluguers[$i] as $key => $value)
             $ordem[$key . $i] = $value;
 ?>
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <link href="/css/admin.css" rel="stylesheet" type="text/css"/>
     </head>
-    
+
     <body>
         <form action="additem.html" method="get">
             <div class="menu">
