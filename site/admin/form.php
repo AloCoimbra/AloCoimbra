@@ -4,6 +4,13 @@
     $id = @((int) $_GET['id']) - 1;
     $entries = $ordens->Find('*', 'WHERE id=' . $id);
     $ordem = count($entries) == 1 ? $entries[0] : array();
+
+    $aluguers = $aluguers->Find('*', 'WHERE ordem=' . $id);
+    $images = $imagens->Find('id', 'WHERE ordem=' . $id);
+
+    for ($i = 0; $i <= count($aluguers); $i++)
+        foreach ($aluguers[$i] as $key => $value)
+            $ordem[$key . $i] = $value;
 ?>
 
 <!doctype html>
@@ -12,8 +19,9 @@
         <meta charset="utf-8">
         <title>AloCoimbra</title>
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-        <link href="/css/admin.css" rel="stylesheet" type="text/css" />
+        <link href="/css/admin.css" rel="stylesheet" type="text/css"/>
     </head>
+    
     <body>
         <form action="additem.html" method="get">
             <div class="menu">
@@ -41,7 +49,6 @@
                     <p>Morada: </p>
                     <p>Zona: </p>
                     <p>Certificação: </p>
-                    <p>Pontuação: </p>
                     <p>1ª Inscrição - Ano: </p>
                     <p>Data da última visita: </p>
                     <p>Data do último pagamento: </p>
@@ -195,7 +202,7 @@
                     </div>
                     <p>Imagem: </p>
 
-                    <!-- para editar -->
+                    <!-- mostrar uma vesrão pequena das imagens, não texto! -->
                     <p>Apagar Imagens: </p>
                     <div class="subtema">
                         <p>Imagem1 </p>
@@ -204,33 +211,35 @@
                 </div>
             </div>
 
-            <div class="menu" id="aluguer0">
-                <div class="right">
-                    <p>
-                        <select name="Tipo0" size="1">
-                            <option selected value="Individual">Individual</option>
-                            <option value="Duplo">Duplo</option>
-                        </select> 
-                    </p>
-                    <p>
-                        <select name="Qualidade0" size="1">
-                            <option selected value="0">Razoável</option>
-                            <option value="1">Bom</option>
-                            <option value="2">Muito Bom</option>
-                            <option value="3">Excelente</option>
-                        </select>
-                    </p>
-                    <p><input type="number" name="Preco0" value="150" min="0" step="1" onkeypress="return isNumberKey(event)"></p>
+            <? for ($i = 0; $i <= count($aluguers); $i++) { ?>
+                <div class="menu" id="aluguer<?=$i?>">
+                    <div class="right">
+                        <p>
+                            <select name="Alojamento<?=$i?>" size="1">
+                                <option selected value="Individual">Individual</option>
+                                <option value="Duplo">Duplo</option>
+                            </select> 
+                        </p>
+                        <p>
+                            <select name="Qualidade<?=$i?>" size="1">
+                                <option selected value="0">Razoável</option>
+                                <option value="1">Bom</option>
+                                <option value="2">Muito Bom</option>
+                                <option value="3">Excelente</option>
+                            </select>
+                        </p>
+                        <p><input type="number" name="Preco<?=$i?>" value="150" min="0" step="1" onkeypress="return isNumberKey(event)"></p>
+                    </div>
+                    <div class="left">
+                        <p>Tipo: </p>
+                        <p>Qualidade: </p>
+                        <p>Preço: </p>
+                    </div>
+                    <center>
+                        <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(<?=$i?>);'>
+                    </center>
                 </div>
-                <div class="left">
-                    <p>Tipo: </p>
-                    <p>Qualidade: </p>
-                    <p>Preço: </p>
-                </div>
-                <center>
-                    <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(0);'>
-                </center>
-            </div>
+            <? } ?>
 
             <div class="menu" id="submit">
                 <center>
