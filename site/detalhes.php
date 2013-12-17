@@ -46,15 +46,16 @@
 		<? } ?>
 	</div>
 
+	<p><label>Certificação da AAC:</label> <?= toggle($ordem['Certificacao'])?></p>
+	<p><label>Numero Mínimo de Meses:</label> <?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
+	<p><label>Capacidade Total:</label> <?= $ordem['Numero_pessoas'] ?></p>
+
 	<div class="right">
         <p><label>Contacto:</label> </p>
 	    <p><?= $ordem['Proprietario']?></p>
 	    <p><?= $ordem['Contacto']?></p>
 	    <p><?= $ordem['Email']?></p>
     </div>
-
-	<p><label>Numero Mínimo de Meses:</label> <?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
-	<p><label>Capacidade Total:</label> <?= $ordem['Numero_pessoas'] ?></p>
 
 	<p><label>Dimensões:</label> <?= qualidade($ordem['Dimensoes']) ?></p>
 	<p><label>Estado da Casa:</label> <?= qualidade($ordem['Estado_casa']) ?></p>

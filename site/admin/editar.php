@@ -31,6 +31,12 @@
                     <p><input type="text" name="Morada"></p>
                     <p><input type="text" name="Zona"></p>
                     <p>
+                       <select name="Visivel" size="1">
+                       		<option selected value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select> 
+                    </p>
+                    <p>
                        <select name="Cetificacao" size="1">
                             <option selected value="0">Não</option>
                             <option value="1">Sim</option>
@@ -50,6 +56,7 @@
                 <div class="left">
                     <p>Morada: </p>
                     <p>Zona: </p>
+                    <p>Visível: </p>
                     <p>Certificação: </p>
                     <p>1ª Inscrição - Ano: </p>
                     <p>Data da última visita: </p>

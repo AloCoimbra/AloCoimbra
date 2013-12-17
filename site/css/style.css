@@ -278,6 +278,11 @@ a, a:hover, a:focus{
 	width:400px;	
 }
 
+.detalhes .right p label{
+	width: 150px;
+	margin-left:0;
+}
+
 .detalhes .extra {
 	margin-left:50px;	
 }
