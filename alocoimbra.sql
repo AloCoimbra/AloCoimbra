@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 02, 2013 at 02:15 PM
+-- Generation Time: Dec 17, 2013 at 11:18 AM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
@@ -12,8 +12,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `alocoimbra`
 --
-CREATE DATABASE `alocoimbra` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `alocoimbra`;
 
 -- --------------------------------------------------------
 
@@ -23,11 +21,10 @@ USE `alocoimbra`;
 
 DROP TABLE IF EXISTS `aluguers`;
 CREATE TABLE IF NOT EXISTS `aluguers` (
-  `ID` int(13) NOT NULL,
   `Alojamento` set('Individual','Duplo') NOT NULL,
   `Qualidade` int(2) NOT NULL,
   `Preco` int(11) NOT NULL,
-  `Ordem` int(11) NOT NULL,
+  `Ordem` int(13) unsigned NOT NULL,
   KEY `Ordem` (`Ordem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -35,30 +32,31 @@ CREATE TABLE IF NOT EXISTS `aluguers` (
 -- Dumping data for table `aluguers`
 --
 
-INSERT INTO `aluguers` VALUES(1, 'Individual', 2, 210, 1);
-INSERT INTO `aluguers` VALUES(2, 'Individual', 2, 180, 1);
-INSERT INTO `aluguers` VALUES(3, 'Individual', 2, 140, 2);
-INSERT INTO `aluguers` VALUES(4, 'Individual', 0, 170, 3);
-INSERT INTO `aluguers` VALUES(5, 'Individual', 1, 150, 4);
-INSERT INTO `aluguers` VALUES(6, 'Individual', 0, 220, 5);
-INSERT INTO `aluguers` VALUES(7, 'Individual', 1, 220, 6);
-INSERT INTO `aluguers` VALUES(8, 'Individual', 2, 155, 7);
-INSERT INTO `aluguers` VALUES(9, 'Individual', 2, 160, 7);
-INSERT INTO `aluguers` VALUES(10, 'Individual', 2, 200, 8);
-INSERT INTO `aluguers` VALUES(11, 'Individual', 2, 150, 9);
-INSERT INTO `aluguers` VALUES(12, 'Individual', 1, 250, 10);
-INSERT INTO `aluguers` VALUES(13, 'Individual', 0, 210, 11);
-INSERT INTO `aluguers` VALUES(14, 'Individual', 2, 200, 12);
-INSERT INTO `aluguers` VALUES(15, 'Individual', 2, 220, 12);
-INSERT INTO `aluguers` VALUES(16, 'Duplo', 0, 100, 13);
-INSERT INTO `aluguers` VALUES(17, 'Individual', 1, 200, 14);
-INSERT INTO `aluguers` VALUES(18, 'Individual', 0, 130, 15);
-INSERT INTO `aluguers` VALUES(19, 'Individual', 0, 140, 15);
-INSERT INTO `aluguers` VALUES(20, 'Individual', 2, 160, 16);
-INSERT INTO `aluguers` VALUES(21, 'Individual', 2, 160, 17);
-INSERT INTO `aluguers` VALUES(22, 'Individual', 1, 190, 18);
-INSERT INTO `aluguers` VALUES(23, 'Individual', 0, 140, 19);
-INSERT INTO `aluguers` VALUES(24, 'Individual', 1, 180, 20);
+INSERT INTO `aluguers` VALUES('Individual', 2, 140, 2);
+INSERT INTO `aluguers` VALUES('Individual', 0, 170, 3);
+INSERT INTO `aluguers` VALUES('Individual', 1, 150, 4);
+INSERT INTO `aluguers` VALUES('Individual', 0, 220, 5);
+INSERT INTO `aluguers` VALUES('Individual', 2, 155, 7);
+INSERT INTO `aluguers` VALUES('Individual', 2, 160, 7);
+INSERT INTO `aluguers` VALUES('Individual', 2, 200, 8);
+INSERT INTO `aluguers` VALUES('Individual', 2, 150, 9);
+INSERT INTO `aluguers` VALUES('Individual', 1, 250, 10);
+INSERT INTO `aluguers` VALUES('Individual', 0, 210, 11);
+INSERT INTO `aluguers` VALUES('Individual', 2, 200, 12);
+INSERT INTO `aluguers` VALUES('Individual', 2, 220, 12);
+INSERT INTO `aluguers` VALUES('Duplo', 0, 100, 13);
+INSERT INTO `aluguers` VALUES('Individual', 1, 200, 14);
+INSERT INTO `aluguers` VALUES('Individual', 0, 130, 15);
+INSERT INTO `aluguers` VALUES('Individual', 0, 140, 15);
+INSERT INTO `aluguers` VALUES('Individual', 2, 160, 16);
+INSERT INTO `aluguers` VALUES('Individual', 2, 160, 17);
+INSERT INTO `aluguers` VALUES('Individual', 1, 190, 18);
+INSERT INTO `aluguers` VALUES('Individual', 0, 140, 19);
+INSERT INTO `aluguers` VALUES('Individual', 1, 220, 0);
+INSERT INTO `aluguers` VALUES('Individual', 0, 200, 6);
+INSERT INTO `aluguers` VALUES('Individual', 0, 150, 21);
+INSERT INTO `aluguers` VALUES('Individual', 2, 210, 1);
+INSERT INTO `aluguers` VALUES('Duplo', 2, 180, 1);
 
 -- --------------------------------------------------------
 
@@ -67,8 +65,8 @@ INSERT INTO `aluguers` VALUES(24, 'Individual', 1, 180, 20);
 --
 DROP VIEW IF EXISTS `entradas`;
 CREATE TABLE IF NOT EXISTS `entradas` (
-`ID` int(13)
-,`Visivel` tinyint(1)
+`ID` int(13) unsigned
+,`Visivel` int(1)
 ,`Certificacao` tinyint(1)
 ,`Senhorio` tinyint(1)
 ,`Lavagem_roupa` tinyint(1)
@@ -85,7 +83,6 @@ CREATE TABLE IF NOT EXISTS `entradas` (
 ,`Proprietario` varchar(64)
 ,`Contacto` varchar(64)
 ,`Email` varchar(64)
-,`Inscricao_ano` year(4)
 ,`Numero_pessoas` int(7)
 ,`Min_meses` int(7)
 ,`Sexo` set('Masculino','Feminino','Ambos')
@@ -93,10 +90,7 @@ CREATE TABLE IF NOT EXISTS `entradas` (
 ,`Casa_de_banho` int(2)
 ,`Dimensoes` int(2)
 ,`Estado_casa` int(2)
-,`Avaliador` varchar(64)
 ,`Tipo` set('Apartamento','Quarto','Residencia','Republica')
-,`Visita` date
-,`Pagamento` date
 ,`Imagem Capa` int(11)
 ,`Qualidade` decimal(7,0)
 ,`MinPreco` bigint(20)
@@ -152,7 +146,7 @@ INSERT INTO `locais` VALUES('Pólo 3', '<p>Perto dos Hospitais da Universidade d
 
 DROP TABLE IF EXISTS `ordens`;
 CREATE TABLE IF NOT EXISTS `ordens` (
-  `ID` int(13) NOT NULL,
+  `ID` int(13) unsigned NOT NULL AUTO_INCREMENT,
   `Visivel` tinyint(1) NOT NULL,
   `Certificacao` tinyint(1) NOT NULL,
   `Senhorio` tinyint(1) NOT NULL,
@@ -183,18 +177,18 @@ CREATE TABLE IF NOT EXISTS `ordens` (
   `Visita` date NOT NULL,
   `Pagamento` date NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `ordens`
 --
 
-INSERT INTO `ordens` VALUES(1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', '', 2000, 16, 0, 'Masculino', 3, 0, 0, 0, '', 'Quarto', '2013-08-29', '2013-08-29');
+INSERT INTO `ordens` VALUES(1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', 'fatima@never.com', 0000, 0, 0, 'Masculino', 3, 0, 0, 0, '', 'Quarto', '2013-08-29', '2013-08-29');
 INSERT INTO `ordens` VALUES(2, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, '', 'Rua António José de Almeida, 65 - R/C ', 'D3', 'Adília dos Santos Sousa', '239 828 611;963 535 340', '', 2000, 4, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-03', '2013-08-30');
 INSERT INTO `ordens` VALUES(3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Limpeza', 'Avenida Sá da Bandeira, 110 - 1º', 'D4', 'Maria Luísa Baptista Mendes Gouveia', '239 717 303; 91 484 50 50', '', 2000, 4, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-07', '2013-09-17');
 INSERT INTO `ordens` VALUES(4, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 'Limpeza', 'Rua do Brasil, 302 - 6º dtº (Calhabé)', 'E6', 'Maria da Glória Bernardo', '239 492 085; 911 990 548', '', 2000, 3, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-08-22', '2013-08-22');
-INSERT INTO `ordens` VALUES(5, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Venâncio Rodrigues, nº 11 F (Praça da República) ', 'D4', 'Maria José Varandas Martins Silva', '968 203 553; 968 257 816; 917 508 813', 'mjmrst@gmail.com', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2013-08-03');
-INSERT INTO `ordens` VALUES(6, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 'Limpeza', 'Rua Dr. António de Vasconcelos, 119 - 2º', 'D3', 'Esmeralda Maria Machado Santos Vaz', '239 828 563; 966 052 670', '', 2000, 3, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-03-22', '2013-08-22');
+INSERT INTO `ordens` VALUES(5, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Venâncio Rodrigues, nº 11 F (Praça da República) ', 'D4', 'Maria José Varandas Martins Silva', '968 203 553; 968 257 816; 917 508 813', 'mjmrst@gmail.com', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2011-08-06');
+INSERT INTO `ordens` VALUES(6, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 'Limpeza', 'Rua Dr. António de Vasconcelos, 119 - 2º', 'D3', 'Esmeralda Maria Machado Santos Vaz', '239 828 563; 966 052 670', '', 0000, 0, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-03-22', '2013-08-22');
 INSERT INTO `ordens` VALUES(7, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, '', 'Rua Dr. Augusto Rocha, 12', 'E3', 'Aida Fernanda Rodrigues', '91 915 37 44', '', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2013-09-03');
 INSERT INTO `ordens` VALUES(8, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 'Limpeza Semanal', 'Rua Pinheiro Chagas, 17 - 1º', 'F3', 'Ana Maria Pessoa Monteiro do Vale', '93 361 80 01; 239 483 618', 'anapessoavale@hotmail.com', 2000, 5, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-21', '2013-08-21');
 INSERT INTO `ordens` VALUES(9, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 'Limpeza', 'Rua Luís de Camões, 58 - 1º', 'F3', 'Maria do Rosário Duarte Dias', '965 007 818', 'mrosariodd@sapo.pt', 2000, 3, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-08-03', '2013-08-30');
@@ -209,6 +203,7 @@ INSERT INTO `ordens` VALUES(17, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 'Limpeza', 'Rua
 INSERT INTO `ordens` VALUES(18, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Guerra Junqueiro, 104 - 2º', 'D3', 'Maria Cândida São José Soares', '914 268 457; 239 832 684; 967 819 632', '', 2000, 5, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-08-09', '2013-09-02');
 INSERT INTO `ordens` VALUES(19, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 'Limpeza', 'Rua Bernardo de Albuquerque, 104', 'F2', 'Maria Jerónima Soares de Albergaria Cabral', '239 482 212', 'coimbra104@gmail.com', 2000, 1, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-13', '2013-09-13');
 INSERT INTO `ordens` VALUES(20, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, '', 'Rua António Jardim, 101 - 1º', 'G2', 'Ruben Manuel Antunes Tavares', '239 838 023; 919 975 114', 'ruben@avscentro.min-saude.pt', 2000, 3, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-07-24', '2013-07-24');
+INSERT INTO `ordens` VALUES(21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 'Rua da Piça', 'B2', '', '', '', 0000, 0, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -573,4 +568,4 @@ INSERT INTO `zonas` VALUES('H8', '00FF00');
 --
 DROP TABLE IF EXISTS `entradas`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `entradas` AS select `o`.`ID` AS `ID`,`o`.`Visivel` AS `Visivel`,`o`.`Certificacao` AS `Certificacao`,`o`.`Senhorio` AS `Senhorio`,`o`.`Lavagem_roupa` AS `Lavagem_roupa`,`o`.`Mobilado` AS `Mobilado`,`o`.`Animais` AS `Animais`,`o`.`Visitas` AS `Visitas`,`o`.`Agua` AS `Agua`,`o`.`Luz` AS `Luz`,`o`.`Gas` AS `Gas`,`o`.`Internet` AS `Internet`,`o`.`Outras_despesas` AS `Outras_despesas`,`o`.`Morada` AS `Morada`,`o`.`Zona` AS `Zona`,`o`.`Proprietario` AS `Proprietario`,`o`.`Contacto` AS `Contacto`,`o`.`Email` AS `Email`,`o`.`Inscricao_ano` AS `Inscricao_ano`,`o`.`Numero_pessoas` AS `Numero_pessoas`,`o`.`Min_meses` AS `Min_meses`,`o`.`Sexo` AS `Sexo`,`o`.`Cozinha` AS `Cozinha`,`o`.`Casa_de_banho` AS `Casa_de_banho`,`o`.`Dimensoes` AS `Dimensoes`,`o`.`Estado_casa` AS `Estado_casa`,`o`.`Avaliador` AS `Avaliador`,`o`.`Tipo` AS `Tipo`,`o`.`Visita` AS `Visita`,`o`.`Pagamento` AS `Pagamento`,`i`.`ID` AS `Imagem Capa`,round(((((((`o`.`Cozinha` + `o`.`Casa_de_banho`) + `o`.`Dimensoes`) + `o`.`Estado_casa`) + (select avg(`aluguers`.`Qualidade`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`))) + 0.5) / 5),0) AS `Qualidade`,(select min(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MinPreco`,(select max(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MaxPreco` from (`ordens` `o` left join `imagens` `i` on((`i`.`Ordem` = `o`.`ID`))) group by `o`.`ID`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `entradas` AS select `o`.`ID` AS `ID`,(`o`.`Visivel` and (curdate() <= (`o`.`Pagamento` + interval 1 year))) AS `Visivel`,`o`.`Certificacao` AS `Certificacao`,`o`.`Senhorio` AS `Senhorio`,`o`.`Lavagem_roupa` AS `Lavagem_roupa`,`o`.`Mobilado` AS `Mobilado`,`o`.`Animais` AS `Animais`,`o`.`Visitas` AS `Visitas`,`o`.`Agua` AS `Agua`,`o`.`Luz` AS `Luz`,`o`.`Gas` AS `Gas`,`o`.`Internet` AS `Internet`,`o`.`Outras_despesas` AS `Outras_despesas`,`o`.`Morada` AS `Morada`,`o`.`Zona` AS `Zona`,`o`.`Proprietario` AS `Proprietario`,`o`.`Contacto` AS `Contacto`,`o`.`Email` AS `Email`,`o`.`Numero_pessoas` AS `Numero_pessoas`,`o`.`Min_meses` AS `Min_meses`,`o`.`Sexo` AS `Sexo`,`o`.`Cozinha` AS `Cozinha`,`o`.`Casa_de_banho` AS `Casa_de_banho`,`o`.`Dimensoes` AS `Dimensoes`,`o`.`Estado_casa` AS `Estado_casa`,`o`.`Tipo` AS `Tipo`,`i`.`ID` AS `Imagem Capa`,round(((((((`o`.`Cozinha` + `o`.`Casa_de_banho`) + `o`.`Dimensoes`) + `o`.`Estado_casa`) + (select avg(`aluguers`.`Qualidade`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`))) + 0.5) / 5),0) AS `Qualidade`,(select min(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MinPreco`,(select max(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`)) AS `MaxPreco` from (`ordens` `o` left join `imagens` `i` on((`i`.`Ordem` = `o`.`ID`))) group by `o`.`ID` order by (select min(`aluguers`.`Preco`) from `aluguers` where (`aluguers`.`Ordem` = `o`.`ID`));
