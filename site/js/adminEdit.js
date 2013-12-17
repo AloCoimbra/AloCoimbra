@@ -1,5 +1,3 @@
-var cont = 1; 
-
 function toggleAluguer(id) {
     var menu = $('#Aluguer' + id);
 
@@ -37,6 +35,6 @@ function isNumberKey(e) {
 }
 
 $(function() {
-    $('.data').datepicker();
+    $(".data").datepicker({ dateFormat: 'yy-mm-dd' });
     updateAluguers();
 });

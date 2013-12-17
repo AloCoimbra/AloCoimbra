@@ -243,9 +243,12 @@
                 </div>
             <? } ?>
 
-            <center>
-                <input type='submit' value='Submeter'> 
-            </center>
+            <div class="menu" id="submit">
+                <center>
+                    <input type='submit' id='submete' value='Submeter'> 
+                </center>
+            </div>
+
         </form>
 
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
