@@ -86,7 +86,7 @@
                             <option value="Feminino">Feminino</option>
                         </select>
                     </p>
-                    <p><input type="text" name="Min_meses"></p>
+                    <p><input type="number" name="Min_meses" value="0" min="0" step="1" onkeypress="return isNumberKey(event)"></p>
                     <p>
                         <select name="Estado_casa" size="1">
                             <option selected value="0">Razoável</option>
@@ -236,7 +236,7 @@
                         <p>Preço: </p>
                     </div>
                     <center>
-                        <input type='button' id='addButton' value='Adicionar outro' onclick='addAluguer(<?=$i?>);'>
+                        <input type='button' id='addButton<?=$i?>' value='Adicionar outro' onclick='addAluguer(<?=$i?>);'>
                     </center>
                 </div>
             <? } ?>

@@ -16,7 +16,7 @@
             $(function() {
                $("#selectable" ).selectable({
                    selected: function(event, ui) {
-                        selection = $('#selectable .ui-selected').attr('id');
+                        selection = jQuery('.pri', $('#selectable .ui-selected')).html();
                         $('#edit').prop('disabled', false);
                    }
                 });
@@ -63,16 +63,16 @@
 
             <ol id="selectable">
                 <? foreach ($ordens->Find('*', '') as $ordem) { ?>
-                    <li class="ui-widget-content" id="<?= $ordem['ID'] + 1 ?>">
+                    <li class="ui-widget-content">
                         <table>
                             <tr>
-                                <td class="pri"> <?= $ordem['ID'] + 1 ?> </td>
-                                <td class="sec"> <?= $ordem['Morada'] ?> </td>
-                                <td class="ter"> <?= $ordem['Proprietario'] ?> </td>
-                                <td class="qua"> <?= $ordem['Contacto'] ?> </td>
-                                <td class="qui"> <?= $ordem['Email'] ?> </td>
-                                <td class="sex"> <?= $ordem['Visita'] ?> </td>
-                                <td class="set"> <?= $ordem['Pagamento'] ?> </td>
+                                <td class="pri"><?= $ordem['ID'] + 1 ?></td>
+                                <td class="sec"><?= $ordem['Morada'] ?></td>
+                                <td class="ter"><?= $ordem['Proprietario'] ?></td>
+                                <td class="qua"><?= $ordem['Contacto'] ?></td>
+                                <td class="qui"><?= $ordem['Email'] ?></td>
+                                <td class="sex"><?= $ordem['Visita'] ?></td>
+                                <td class="set"><?= $ordem['Pagamento'] ?></td>
                             </tr>
                         </table>
                     </li>
