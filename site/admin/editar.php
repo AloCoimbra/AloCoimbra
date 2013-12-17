@@ -212,7 +212,7 @@
             </div>
 
             <? for ($i = 0; $i <= count($aluguers); $i++) { ?>
-                <div class="menu" id="aluguer<?=$i?>">
+                <div class="menu" id="Aluguer<?=$i?>">
                     <div class="right">
                         <p>
                             <select name="Alojamento<?=$i?>" size="1">
@@ -236,16 +236,14 @@
                         <p>Preço: </p>
                     </div>
                     <center>
-                        <input type='button' id='addButton<?=$i?>' value='Adicionar outro' onclick='addAluguer(<?=$i?>);'>
+                        <input type='button' id='Toggle<?=$i?>' value='Adicionar outro'>
                     </center>
                 </div>
             <? } ?>
 
-            <div class="menu" id="submit">
-                <center>
-                    <input type='submit' id='submete' value='Submeter'> 
-                </center>
-            </div>
+            <center>
+                <input type='submit' value='Submeter'> 
+            </center>
         </form>
 
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -254,6 +252,6 @@
             var formData = <?= json_encode($ordem); ?>;
         </script>
         <script src="/js/forms.js"></script>
-        <script src="/js/adminForm.js"></script>
+        <script src="/js/adminEdit.js"></script>
     </body>
 </html>
