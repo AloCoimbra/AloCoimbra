@@ -60,12 +60,13 @@
 			return $array;
 		}
 
-		function Columns() {
+		function Columns($specials) {
 			$result = $this->Query("DESCRIBE $this->name");
 			$columns = array();
 
 			while ($column = mysql_fetch_assoc($result))
-				$columns[] = $column['Field'];
+				if ($specials || $column['Key'] == '')
+					$columns[] = $column['Field'];
 
 			mysql_free_result($result);
 			return $columns;
@@ -96,7 +97,10 @@
 			$opers = substr($opers, 0, -2);
 			$this->Query("UPDATE $this->name SET $opers $cond");
 		}
-		
+
+		function Delete($cond) {
+			$this->Query("DELETE FROM $this->name $cond");
+		}
 		
 		// Low-Level
 		function Select($fields, $cond) {

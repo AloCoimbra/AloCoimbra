@@ -4,12 +4,12 @@
 
     function qualidade($v) { 
     	if ($v == 3)
-    		return "Excelente";
+    		return 'Excelente';
     	elseif ($v == 2)
-    		return "Muito Bom";
+    		return 'Muito Bom';
     	elseif ($v == 1)
-    		return "Bom";
+    		return 'Bom';
     	else
-    		return "Razoável";
+    		return 'Razoável';
 	}
 ?>

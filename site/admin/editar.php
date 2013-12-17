@@ -23,7 +23,9 @@
     </head>
 
     <body>
-        <form action="additem.html" method="get">
+        <form action="/admin/submeter" method="post">
+            <input type="hidden" name="ID" value="<?=$id?>"/>
+
             <div class="menu">
                 <div class="right">
                     <p><input type="text" name="Morada"></p>
@@ -211,7 +213,7 @@
                 </div>
             </div>
 
-            <? for ($i = 0; $i <= count($aluguers); $i++) { ?>
+            <? for ($i = 0; $i < max(1, count($aluguers)); $i++) { ?>
                 <div class="menu" id="Aluguer<?=$i?>">
                     <div class="right">
                         <p>
