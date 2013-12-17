@@ -24,7 +24,7 @@
     </head>
 
     <body>
-        <form action="/admin/submeter" method="post">
+        <form action="/admin/submeter" method="post" enctype="multipart/form-data">
             <input type="hidden" name="ID" value="<?=$id?>"/>
 
             <div class="menu">
@@ -181,7 +181,7 @@
                         </select> 
                     </p>
                     <p>
-                        <input name="imagem" type="file" multiple accept='image/*'>
+                        <input name="imagens[]" type="file" multiple accept='image/*'>
                     </p>  
                     <? if (count($images) > 0) { ?>
                     	<p></p>

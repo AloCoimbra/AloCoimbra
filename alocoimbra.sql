@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2013 at 11:18 AM
+-- Generation Time: Dec 17, 2013 at 10:51 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
@@ -104,16 +104,19 @@ CREATE TABLE IF NOT EXISTS `entradas` (
 
 DROP TABLE IF EXISTS `imagens`;
 CREATE TABLE IF NOT EXISTS `imagens` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Ordem` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `Ordem` (`Ordem`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `imagens`
 --
 
+INSERT INTO `imagens` VALUES(1, 1);
+INSERT INTO `imagens` VALUES(9, 1);
+INSERT INTO `imagens` VALUES(10, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `ordens` (
 -- Dumping data for table `ordens`
 --
 
-INSERT INTO `ordens` VALUES(1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', 'fatima@never.com', 0000, 0, 0, 'Masculino', 3, 0, 0, 0, '', 'Quarto', '2013-08-29', '2013-08-29');
+INSERT INTO `ordens` VALUES(1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 'Limpeza', 'Rua do Loureiro, 17', 'D4', 'Fátima Esteves', '239 829 438;964 396 582', 'fatima@never.com', 0000, 0, 0, 'Masculino', 3, 0, 0, 0, '', 'Quarto', '2013-08-29', '2013-08-29');
 INSERT INTO `ordens` VALUES(2, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, '', 'Rua António José de Almeida, 65 - R/C ', 'D3', 'Adília dos Santos Sousa', '239 828 611;963 535 340', '', 2000, 4, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-03', '2013-08-30');
 INSERT INTO `ordens` VALUES(3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Limpeza', 'Avenida Sá da Bandeira, 110 - 1º', 'D4', 'Maria Luísa Baptista Mendes Gouveia', '239 717 303; 91 484 50 50', '', 2000, 4, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-07', '2013-09-17');
 INSERT INTO `ordens` VALUES(4, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 'Limpeza', 'Rua do Brasil, 302 - 6º dtº (Calhabé)', 'E6', 'Maria da Glória Bernardo', '239 492 085; 911 990 548', '', 2000, 3, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-08-22', '2013-08-22');
@@ -488,7 +491,6 @@ INSERT INTO `pontoszonas` VALUES('H8', 40.19588, -8.39471);
 DROP TABLE IF EXISTS `zonas`;
 CREATE TABLE IF NOT EXISTS `zonas` (
   `Nome` varchar(4) NOT NULL,
-  `Cor` varchar(8) NOT NULL,
   PRIMARY KEY (`Nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -496,70 +498,70 @@ CREATE TABLE IF NOT EXISTS `zonas` (
 -- Dumping data for table `zonas`
 --
 
-INSERT INTO `zonas` VALUES('A1', '00FF00');
-INSERT INTO `zonas` VALUES('A2', '00FF00');
-INSERT INTO `zonas` VALUES('A3', '00FF00');
-INSERT INTO `zonas` VALUES('A4', '00FF00');
-INSERT INTO `zonas` VALUES('A5', '00FF00');
-INSERT INTO `zonas` VALUES('A6', '00FF00');
-INSERT INTO `zonas` VALUES('A7', '00FF00');
-INSERT INTO `zonas` VALUES('A8', '00FF00');
-INSERT INTO `zonas` VALUES('B1', '00FF00');
-INSERT INTO `zonas` VALUES('B2', '00FF00');
-INSERT INTO `zonas` VALUES('B3', '00FF00');
-INSERT INTO `zonas` VALUES('B4', '00FF00');
-INSERT INTO `zonas` VALUES('B5', '00FF00');
-INSERT INTO `zonas` VALUES('B6', '00FF00');
-INSERT INTO `zonas` VALUES('B7', '00FF00');
-INSERT INTO `zonas` VALUES('B8', '00FF00');
-INSERT INTO `zonas` VALUES('C1', '00FF00');
-INSERT INTO `zonas` VALUES('C2', '00FF00');
-INSERT INTO `zonas` VALUES('C3', '00FF00');
-INSERT INTO `zonas` VALUES('C4', '00FF00');
-INSERT INTO `zonas` VALUES('C5', '00FF00');
-INSERT INTO `zonas` VALUES('C6', '00FF00');
-INSERT INTO `zonas` VALUES('C7', '00FF00');
-INSERT INTO `zonas` VALUES('C8', '00FF00');
-INSERT INTO `zonas` VALUES('D1', '00FF00');
-INSERT INTO `zonas` VALUES('D2', '00FF00');
-INSERT INTO `zonas` VALUES('D3', '00FF00');
-INSERT INTO `zonas` VALUES('D4', '00FF00');
-INSERT INTO `zonas` VALUES('D5', '00FF00');
-INSERT INTO `zonas` VALUES('D6', '00FF00');
-INSERT INTO `zonas` VALUES('D7', '00FF00');
-INSERT INTO `zonas` VALUES('D8', '00FF00');
-INSERT INTO `zonas` VALUES('E1', '00FF00');
-INSERT INTO `zonas` VALUES('E2', '00FF00');
-INSERT INTO `zonas` VALUES('E3', '00FF00');
-INSERT INTO `zonas` VALUES('E4', '00FF00');
-INSERT INTO `zonas` VALUES('E5', '00FF00');
-INSERT INTO `zonas` VALUES('E6', '00FF00');
-INSERT INTO `zonas` VALUES('E7', '00FF00');
-INSERT INTO `zonas` VALUES('E8', '00FF00');
-INSERT INTO `zonas` VALUES('F1', '00FF00');
-INSERT INTO `zonas` VALUES('F2', '00FF00');
-INSERT INTO `zonas` VALUES('F3', '00FF00');
-INSERT INTO `zonas` VALUES('F4', '00FF00');
-INSERT INTO `zonas` VALUES('F5', '00FF00');
-INSERT INTO `zonas` VALUES('F6', '00FF00');
-INSERT INTO `zonas` VALUES('F7', '00FF00');
-INSERT INTO `zonas` VALUES('F8', '00FF00');
-INSERT INTO `zonas` VALUES('G1', '00FF00');
-INSERT INTO `zonas` VALUES('G2', '00FF00');
-INSERT INTO `zonas` VALUES('G3', '00FF00');
-INSERT INTO `zonas` VALUES('G4', '00FF00');
-INSERT INTO `zonas` VALUES('G5', '00FF00');
-INSERT INTO `zonas` VALUES('G6', '00FF00');
-INSERT INTO `zonas` VALUES('G7', '00FF00');
-INSERT INTO `zonas` VALUES('G8', '00FF00');
-INSERT INTO `zonas` VALUES('H1', '00FF00');
-INSERT INTO `zonas` VALUES('H2', '00FF00');
-INSERT INTO `zonas` VALUES('H3', '00FF00');
-INSERT INTO `zonas` VALUES('H4', '00FF00');
-INSERT INTO `zonas` VALUES('H5', '00FF00');
-INSERT INTO `zonas` VALUES('H6', '00FF00');
-INSERT INTO `zonas` VALUES('H7', '00FF00');
-INSERT INTO `zonas` VALUES('H8', '00FF00');
+INSERT INTO `zonas` VALUES('A1');
+INSERT INTO `zonas` VALUES('A2');
+INSERT INTO `zonas` VALUES('A3');
+INSERT INTO `zonas` VALUES('A4');
+INSERT INTO `zonas` VALUES('A5');
+INSERT INTO `zonas` VALUES('A6');
+INSERT INTO `zonas` VALUES('A7');
+INSERT INTO `zonas` VALUES('A8');
+INSERT INTO `zonas` VALUES('B1');
+INSERT INTO `zonas` VALUES('B2');
+INSERT INTO `zonas` VALUES('B3');
+INSERT INTO `zonas` VALUES('B4');
+INSERT INTO `zonas` VALUES('B5');
+INSERT INTO `zonas` VALUES('B6');
+INSERT INTO `zonas` VALUES('B7');
+INSERT INTO `zonas` VALUES('B8');
+INSERT INTO `zonas` VALUES('C1');
+INSERT INTO `zonas` VALUES('C2');
+INSERT INTO `zonas` VALUES('C3');
+INSERT INTO `zonas` VALUES('C4');
+INSERT INTO `zonas` VALUES('C5');
+INSERT INTO `zonas` VALUES('C6');
+INSERT INTO `zonas` VALUES('C7');
+INSERT INTO `zonas` VALUES('C8');
+INSERT INTO `zonas` VALUES('D1');
+INSERT INTO `zonas` VALUES('D2');
+INSERT INTO `zonas` VALUES('D3');
+INSERT INTO `zonas` VALUES('D4');
+INSERT INTO `zonas` VALUES('D5');
+INSERT INTO `zonas` VALUES('D6');
+INSERT INTO `zonas` VALUES('D7');
+INSERT INTO `zonas` VALUES('D8');
+INSERT INTO `zonas` VALUES('E1');
+INSERT INTO `zonas` VALUES('E2');
+INSERT INTO `zonas` VALUES('E3');
+INSERT INTO `zonas` VALUES('E4');
+INSERT INTO `zonas` VALUES('E5');
+INSERT INTO `zonas` VALUES('E6');
+INSERT INTO `zonas` VALUES('E7');
+INSERT INTO `zonas` VALUES('E8');
+INSERT INTO `zonas` VALUES('F1');
+INSERT INTO `zonas` VALUES('F2');
+INSERT INTO `zonas` VALUES('F3');
+INSERT INTO `zonas` VALUES('F4');
+INSERT INTO `zonas` VALUES('F5');
+INSERT INTO `zonas` VALUES('F6');
+INSERT INTO `zonas` VALUES('F7');
+INSERT INTO `zonas` VALUES('F8');
+INSERT INTO `zonas` VALUES('G1');
+INSERT INTO `zonas` VALUES('G2');
+INSERT INTO `zonas` VALUES('G3');
+INSERT INTO `zonas` VALUES('G4');
+INSERT INTO `zonas` VALUES('G5');
+INSERT INTO `zonas` VALUES('G6');
+INSERT INTO `zonas` VALUES('G7');
+INSERT INTO `zonas` VALUES('G8');
+INSERT INTO `zonas` VALUES('H1');
+INSERT INTO `zonas` VALUES('H2');
+INSERT INTO `zonas` VALUES('H3');
+INSERT INTO `zonas` VALUES('H4');
+INSERT INTO `zonas` VALUES('H5');
+INSERT INTO `zonas` VALUES('H6');
+INSERT INTO `zonas` VALUES('H7');
+INSERT INTO `zonas` VALUES('H8');
 
 -- --------------------------------------------------------
 
