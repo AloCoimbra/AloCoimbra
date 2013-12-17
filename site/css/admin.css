@@ -115,3 +115,13 @@
 	width: 90%;
 	height: 50px;
 }
+
+.menu .left img{
+	display: block;
+	margin: 0 0 20px 80%;
+}
+
+.menu .right .picture_check{
+	height: 100px;
+	margin: 0 0 20px 0;
+}

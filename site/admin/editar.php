@@ -1,5 +1,6 @@
 <?
     require '../database.php';
+    require '../lib/ImageClip.php';
 
     $id = @((int) $_GET['id']) - 1;
     $ordem = $ordens->Pull('*', 'WHERE id=' . $id);
@@ -182,9 +183,12 @@
                     <p>
                         <input name="imagem" type="file" multiple accept='image/*'>
                     </p>  
-                    <p></p>
-                    <p><input type="checkbox" name="imagem1" value="1"></p>
-                    <p><input type="checkbox" name="imagem2" value="1"></p>
+                    <? if (count($images) > 0) { ?>
+                    	<p></p>
+                        <? foreach ($images as $image) { ?>
+				    		<p class="picture_check"><input type="checkbox" name="picture<?=$image['id']?>" value="1"></p>
+				    	<? } ?>
+                    <? } ?>
                 </div>
                 <div class="left">
                     <p>Alojamento: </p>
@@ -212,11 +216,12 @@
                     <p>Imagem: </p>
 
                     <!-- mostrar uma vesrão pequena das imagens, não texto! -->
-                    <p>Apagar Imagens: </p>
-                    <div class="subtema">
-                        <p>Imagem1 </p>
-                        <p>Imagem2 </p>
-                    </div>
+                    <? if (count($images) > 0) { ?>
+                        <p>Apagar Imagens: </p>
+                        <? foreach ($images as $image) { ?>
+				    		<img src="<?=LoadImage('/images/', $image['id'], 100, 100)?>"/>
+				    	<? } ?>
+                    <? } ?>
                 </div>
             </div>
 
