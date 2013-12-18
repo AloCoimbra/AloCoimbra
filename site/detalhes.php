@@ -32,7 +32,7 @@
 	<div class="right">
         <p><label>Géneros Aceites:</label> <?= $ordem['Sexo'] ?></p>
         <p><label>Alojamento:</label> <?= $ordem['Tipo']?></p>
-        <p title="As áreas abaixo referem-se às áreas situadas no mapa."><label>Zona:</label> <?= $ordem['Zona']?></p>
+        <p title="As áreas estão especificadas no mapa."><label>Zona:</label> <?= $ordem['Zona']?></p>
         <p><label> Morada:</label> <?= $ordem['Morada']?></p>
     </div>
 
@@ -47,15 +47,14 @@
 	</div>
 
 	<p><label>Certificação da AAC:</label> <?= toggle($ordem['Certificacao'])?></p>
-	<p><label>Numero Mínimo de Meses:</label> <?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
-	<p><label>Capacidade Total:</label> <?= $ordem['Numero_pessoas'] ?></p>
-
 	<div class="right">
         <p><label>Contacto:</label> </p>
 	    <p><?= $ordem['Proprietario']?></p>
 	    <p><?= $ordem['Contacto']?></p>
 	    <p><?= $ordem['Email']?></p>
     </div>
+	<p><label>Numero Mínimo de Meses:</label> <?= $ordem['Min_meses'] > 0 ? $ordem['Min_meses'] : 'Não' ?></p>
+	<p><label>Capacidade Total:</label> <?= $ordem['Numero_pessoas'] ?></p>
 
 	<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Dimensões:</label> <?= qualidade($ordem['Dimensoes']) ?></p>
 	<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Estado da Casa:</label> <?= qualidade($ordem['Estado_casa']) ?></p>
