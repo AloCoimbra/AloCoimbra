@@ -56,7 +56,7 @@
             <a href="/detalhes/<?=$entrada['ID'] + 1?>">
                 <img src="<?= $entrada['Imagem Capa'] ? LoadImage('/images/', $entrada['Imagem Capa'], 100, 100) : '/images/Filler.png' ?>">
                 <div>
-                	<span><?= qualidade($entrada['Qualidade']) ?></span>
+                	<span title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><?= qualidade($entrada['Qualidade']) ?></span>
                     <h1><?= $entrada['Tipo'] ?></h1>
                     <p><?= $entrada['Morada'] ?> (<?= $entrada['Zona'] ?>)</p>
                     <p><?= $entrada['Sexo'] ?></p>

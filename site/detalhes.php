@@ -32,7 +32,7 @@
 	<div class="right">
         <p><label>Géneros Aceites:</label> <?= $ordem['Sexo'] ?></p>
         <p><label>Alojamento:</label> <?= $ordem['Tipo']?></p>
-        <p><label>Zona:</label> <?= $ordem['Zona']?></p>
+        <p title="As áreas abaixo referem-se às áreas situadas no mapa."><label>Zona:</label> <?= $ordem['Zona']?></p>
         <p><label> Morada:</label> <?= $ordem['Morada']?></p>
     </div>
 
@@ -40,7 +40,7 @@
 		<? foreach ($aluguers->Find('*', 'WHERE ordem=' . $id) as $aluguer) { ?>
 	    	<a>
 				<p><label>Tipo de Alojamento:</label> <?=$aluguer['Alojamento']?></p>
-				<p><label>Qualidade do Quarto:</label> <?=qualidade($aluguer['Qualidade'])?></p>
+				<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Qualidade do Quarto:</label> <?=qualidade($aluguer['Qualidade'])?></p>
 	            <p><label>Preço por Mês:</label> <?=$aluguer['Preco']?> €</p>
 	        </a>
 		<? } ?>
@@ -57,9 +57,9 @@
 	    <p><?= $ordem['Email']?></p>
     </div>
 
-	<p><label>Dimensões:</label> <?= qualidade($ordem['Dimensoes']) ?></p>
-	<p><label>Estado da Casa:</label> <?= qualidade($ordem['Estado_casa']) ?></p>
-	<p><label>Qualidade Casa de Banho:</label> <?= qualidade($ordem['Casa_de_banho']) ?></p>
+	<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Dimensões:</label> <?= qualidade($ordem['Dimensoes']) ?></p>
+	<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Estado da Casa:</label> <?= qualidade($ordem['Estado_casa']) ?></p>
+	<p title="A avaliação foi realizada pela AAC, sendo as avaliações divididas em Razoável, Bom, Muito Bom e Excelente."><label>Qualidade Casa de Banho:</label> <?= qualidade($ordem['Casa_de_banho']) ?></p>
 
 	<p><label>Mobilado:</label> <?= toggle($ordem['Mobilado'])?></p>
 	<p><label>Senhorio Residente:</label> <?= toggle($ordem['Senhorio'])?></p>

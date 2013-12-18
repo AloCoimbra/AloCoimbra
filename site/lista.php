@@ -20,7 +20,7 @@
 		        </select>
 	        </p>
 	        
-	        <p>Localização:
+	        <p title="As áreas abaixo referem-se às áreas situadas no mapa.">Localização:
 		        <select name="Zona" size="1">
 		          <option selected value=""></option>
 
