@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2013 at 10:51 PM
+-- Generation Time: Dec 20, 2013 at 06:10 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
@@ -12,6 +12,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `alocoimbra`
 --
+CREATE DATABASE `alocoimbra` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `alocoimbra`;
 
 -- --------------------------------------------------------
 
@@ -108,15 +110,12 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   `Ordem` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `Ordem` (`Ordem`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `imagens`
 --
 
-INSERT INTO `imagens` VALUES(1, 1);
-INSERT INTO `imagens` VALUES(9, 1);
-INSERT INTO `imagens` VALUES(10, 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +189,7 @@ INSERT INTO `ordens` VALUES(1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 'Limpeza', 'Rua 
 INSERT INTO `ordens` VALUES(2, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, '', 'Rua António José de Almeida, 65 - R/C ', 'D3', 'Adília dos Santos Sousa', '239 828 611;963 535 340', '', 2000, 4, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-03', '2013-08-30');
 INSERT INTO `ordens` VALUES(3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Limpeza', 'Avenida Sá da Bandeira, 110 - 1º', 'D4', 'Maria Luísa Baptista Mendes Gouveia', '239 717 303; 91 484 50 50', '', 2000, 4, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-07', '2013-09-17');
 INSERT INTO `ordens` VALUES(4, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 'Limpeza', 'Rua do Brasil, 302 - 6º dtº (Calhabé)', 'E6', 'Maria da Glória Bernardo', '239 492 085; 911 990 548', '', 2000, 3, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-08-22', '2013-08-22');
-INSERT INTO `ordens` VALUES(5, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Venâncio Rodrigues, nº 11 F (Praça da República) ', 'D4', 'Maria José Varandas Martins Silva', '968 203 553; 968 257 816; 917 508 813', 'mjmrst@gmail.com', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2011-08-06');
+INSERT INTO `ordens` VALUES(5, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Venâncio Rodrigues, nº 11 F (Praça da República) ', 'D4', 'Maria José Varandas Martins Silva', '968 203 553; 968 257 816; 917 508 813', 'mjmrst@gmail.com', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2013-08-06');
 INSERT INTO `ordens` VALUES(6, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 'Limpeza', 'Rua Dr. António de Vasconcelos, 119 - 2º', 'D3', 'Esmeralda Maria Machado Santos Vaz', '239 828 563; 966 052 670', '', 0000, 0, 0, 'Masculino', 0, 0, 0, 0, '', 'Quarto', '2013-03-22', '2013-08-22');
 INSERT INTO `ordens` VALUES(7, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, '', 'Rua Dr. Augusto Rocha, 12', 'E3', 'Aida Fernanda Rodrigues', '91 915 37 44', '', 2000, 7, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-03', '2013-09-03');
 INSERT INTO `ordens` VALUES(8, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 'Limpeza Semanal', 'Rua Pinheiro Chagas, 17 - 1º', 'F3', 'Ana Maria Pessoa Monteiro do Vale', '93 361 80 01; 239 483 618', 'anapessoavale@hotmail.com', 2000, 5, 0, 'Feminino', 0, 0, 0, 0, '', 'Quarto', '2013-08-21', '2013-08-21');
@@ -206,7 +205,6 @@ INSERT INTO `ordens` VALUES(17, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 'Limpeza', 'Rua
 INSERT INTO `ordens` VALUES(18, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 'Limpeza', 'Rua Guerra Junqueiro, 104 - 2º', 'D3', 'Maria Cândida São José Soares', '914 268 457; 239 832 684; 967 819 632', '', 2000, 5, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-08-09', '2013-09-02');
 INSERT INTO `ordens` VALUES(19, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 'Limpeza', 'Rua Bernardo de Albuquerque, 104', 'F2', 'Maria Jerónima Soares de Albergaria Cabral', '239 482 212', 'coimbra104@gmail.com', 2000, 1, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-09-13', '2013-09-13');
 INSERT INTO `ordens` VALUES(20, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, '', 'Rua António Jardim, 101 - 1º', 'G2', 'Ruben Manuel Antunes Tavares', '239 838 023; 919 975 114', 'ruben@avscentro.min-saude.pt', 2000, 3, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '2013-07-24', '2013-07-24');
-INSERT INTO `ordens` VALUES(21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 'Rua da Piça', 'B2', '', '', '', 0000, 0, 0, 'Ambos', 0, 0, 0, 0, '', 'Quarto', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 

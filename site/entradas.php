@@ -28,7 +28,7 @@
     function diffFilter($key) {return andFilter($key, '!=');}
 
     $max = getInt('MaxPreco', 750);
-    $min = getInt('MinPreco', 150);
+    $min = getInt('MinPreco', 100);
     $meses = getInt('Meses');
 
     $types = typeFilter('Quarto') . typeFilter('Apartamento') . typeFilter('Residencia') . typeFilter('Republica');

@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     $('.tooool').tooltip();
     $('.slider').slider({
-        value: [min ? min:150, max ? max:750],
+        value: [min ? min:100, max ? max:750],
         max: 2000,
         step: 5,
         min: 0,
