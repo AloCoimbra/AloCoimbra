@@ -28,7 +28,20 @@
 			$aluguers->Insert($args);
 		}
 
-		// Imagens
+		// Delete Imagens
+		foreach ($imagens->Find('id', "WHERE Ordem=$id") as $entry) {
+			if (@($_POST['ApagarImagem' . $entry['id']])) {
+				$imageID = $entry['id'];
+				$imagens->Delete("WHERE id=$imageID");
+
+				unlink($_SERVER['DOCUMENT_ROOT'] . '/images/' . $imageID);
+				@unlink($_SERVER['DOCUMENT_ROOT'] . '/images/100x100/' . $imageID);
+				@unlink($_SERVER['DOCUMENT_ROOT'] . '/images/700x306/' . $imageID);
+			}
+		}
+
+
+		// Upload Imagens
 		$images = @($_FILES['imagens']);
 		$allowed = array('image/jpg', 'image/jpeg', 'image/png', 'image/gif');
 

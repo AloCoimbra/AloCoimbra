@@ -182,13 +182,7 @@
                     </p>
                     <p>
                         <input name="imagens[]" type="file" multiple accept='image/*'>
-                    </p>  
-                    <? if (count($images) > 0) { ?>
-                    	<p></p>
-                        <? foreach ($images as $image) { ?>
-				    		<p class="picture_check"><input type="checkbox" name="picture<?=$image['id']?>" value="1"></p>
-				    	<? } ?>
-                    <? } ?>
+                    </p>
                 </div>
                 <div class="left">
                     <p>Alojamento: </p>
@@ -215,10 +209,10 @@
                     </div>
                     <p>Imagem: </p>
 
-                    <!-- mostrar uma vesrão pequena das imagens, não texto! -->
                     <? if (count($images) > 0) { ?>
                         <p>Apagar Imagens: </p>
                         <? foreach ($images as $image) { ?>
+                            <input type="checkbox" name="ApagarImagem<?=$image['id']?>"/>
 				    		<img src="<?=LoadImage('/images/', $image['id'], 100, 100)?>"/>
 				    	<? } ?>
                     <? } ?>
