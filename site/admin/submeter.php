@@ -47,7 +47,7 @@
 
 		if ($images) 
 			for ($i=0; $i < count($images['name']); $i++)
-				if ($images['error'][$i] == 0 && $images['size'][$i] <= 800000 && in_array($$images['type'][$i], $allowed)) {
+				if ($images['error'][$i] == 0 && $images['size'][$i] <= 800000 && in_array($images['type'][$i], $allowed)) {
 					$imageID = $imagens->Insert(array('Ordem' => $id));
 					move_uploaded_file($images['tmp_name'][$i], $_SERVER['DOCUMENT_ROOT'] . '/images/' . $imageID);
 				}
