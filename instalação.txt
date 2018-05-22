@@ -1,0 +1,6 @@
+1) No Wamp:
+	1.1) Ligar o addon "mod_rewrite"
+	1.2) Ligar "short open tags" nos settings de PHP
+2) Em "phpMyAdmin":
+	2.1) Mudar a password do utilizador "root" para "root"
+	2.2) Fazer import do ficheiro BD.sql
